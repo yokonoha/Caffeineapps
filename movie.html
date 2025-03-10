@@ -1,0 +1,240 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:image" content="./mark.png">
+  <meta name="og:image" content="./mark.png">
+  <meta name="twitter:title" content="Caffeine Movie by Y.Yokoha Studio Projects">
+  <meta name="twitter:description" content="[日本語版]CaffeineCSSを活用したモダンなローカルファイル動画プレイヤーサイト">
+  <meta name="description" content="CaffeineCSSを活用したモダンなローカルファイル動画プレイヤーサイト(JP Edition)">
+ 
+  <title>Caffeine Movie (JP)</title>
+  <meta charset="UTF-8">
+  <link href="caffeine.css" rel="stylesheet"/>
+</head>
+<style>
+    .btn
+    {
+        width: 40px;
+        height: 30px;
+        cursor: pointer;
+    }
+    /*
+#right
+{
+min-width: 100%;
+padding: 20px;
+box-sizing: border-box;
+}
+.mainui
+{
+ min-width: 100%;
+padding: 20px;
+box-sizing: border-box; 
+}*/
+textarea
+{
+    width: 100%;
+    resize: none;
+}
+#lyrics
+{
+    width: 50vw;
+    height: 30vh;
+    overflow-y: scroll;
+}
+#splash
+{
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 100vh;
+    background-color: #fff;
+    display: flex;
+    align-items: center;
+    justify-content:center;
+    z-index: 1000;
+    background-image: url('./video.png'); 
+            background-size: cover; 
+            background-position: center;
+            background-repeat: no-repeat;
+}
+.fade-in {
+            animation: fadeIn 1s ease-out;
+        }
+
+        @keyframes fadeIn {
+            from { opacity: 0; }
+            to { opacity: 1; }
+        }
+
+#drop-area {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100vw;
+            height: 100vh;
+            border: 2px dashed #ddd;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            opacity: 0;
+            pointer-events: none;
+        }
+        #drop-area.active {
+            opacity: 1;
+            pointer-events: auto;
+            background-color: rgba(240, 240, 240, 0.8);
+        }
+        @media only screen and (min-width: 800px) 
+        {
+#mediaq
+{
+display: flex;
+min-height: 50vh;
+justify-content: center;
+
+}
+#mediaq2
+{
+    display: flex;
+width: 40%;
+justify-content: center;
+align-items: center;
+width: 50vw;
+}
+#album-art
+{
+    width: 100%;
+    border-radius: 15px;
+}
+ 
+        }
+</style>
+<body> 
+<!--スプラッシュ画面-->
+<div id="splash" >
+<div id="splashc"style="width: 80vw; display: flex;align-items: center;justify-content:center;">
+<div class="C">
+    <div class="A">  
+        <div class="title">  
+        <img src="./movie.png" width="15%" height="15%">  
+        <h1>Caffeine Movie</h1>   
+         </div>  
+         </div>  
+         <div class="marks-container">
+         <div class="marks-r-o">
+             <p>Rev.1.1(Release)-Caffeine_CSS Rev.4</p>  
+         </div>  
+         </div>
+</div> </div>
+</div>
+
+<div id="main" class="fade-in" style="display: none; ">
+    <div id="drop-area" class="drop-area">ファイルやフォルダをここにドロップすると再生します。</div>
+<div class="E" id="cntl" style="position: absolute; top: 0px; text-align: center;">
+<div class="title">
+    <img src="./movie.png" width="5%" height="5%">
+    <h3 id="title">Caffeine Movie</h3>
+</div>   
+</div>
+<div class="A" id="playdiv" style="width:100vw; height:100vh; max-width: none; background-color: black;">
+
+    <video id="video-player" width="100%" height="95%" autoplay></video>
+    </div>
+    <div class="C" id="cntl2" style=" width: 80vw; position: absolute; bottom: 0px;">
+        <input type="range" id="seek-bar" value="0" max="100" style="width: 100%;">
+        <div style="display: flex; justify-content: space-between;">
+        <p id="time0">0:00</p>
+        <p id="time1">0:00</p>
+    </div>
+    
+    <div class="G" style="align-items: center; justify-content: center; display: flex; ">
+        <div class="marks-container" >
+            <div class="marks-r-b" onclick="fileInput.click()">動画選択</div>
+            <input type="file" id="file-input" accept="video/*" style="display:none;">
+            <div class="marks-r-y" onclick="folderInput.click()">フォルダ選択</div>
+            <input type="file" id="folder-input" accept="video/*" webkitdirectory multiple style="display:none;">
+            <a href="#pl" style="text-decoration: none; color: black;"><div class="marks-r-o" >プレイリスト</div></a>
+            </div>
+        <img src="prev.png" class="btn" id="prev-button" alt="前の動画">
+        <img src="play.png" class="btn" id="play-pause-button" alt="再生/一時停止">
+        <img src="next.png" class="btn" id="next-button" alt="次の動画"> 
+    
+    </div>
+    <div style="display: flex; justify-content: space-between;">
+        <div style="display: flex; width: 50%;">
+            <p id="spd">Speed:1x</p>
+            <input type="range" id="speed-control" value="1" min="0.5" max="2" step="0.1" style="width: 100%;"></div>
+            <div style="display: flex; width: 50%;">
+                <p>Volume</p><input type="range" id="volume-control" min="0" max="1" step="0.1" value="1" style="width: 100%;">
+            </div>
+        </div>
+</div>
+
+        <div class="A" id="pl" style="max-width: 90vw;">
+            <p>再生リスト</p>
+            <p><small>クリックまたはタップすると再生します。<br>項目が多い場合は左右にスライドして下さい。</small></p>
+            <div id="playlist" style="display:flex; overflow-x: scroll; width: 90%;">
+            </div>
+        </div>
+<div class="cnt"><p></p></div>
+<div class="cnt"><p></p></div>
+<div class="cnt"><p></p></div>
+<div class="cnt"><p></p></div>
+<div class="G" style="position: static; top: 15vh; right: 5px;" id="accountdetails">
+    <p onclick="closeaccountdiv()" id="asis1">閉じる</p>
+    <a href="./account.html"><img src="./ic.png" style="height: 50px; border-radius: 500px;" id="accountview"></a>
+    <div class="I" id="dropdownarea">
+        <p><small id="asis4">ようこそ</small></p>
+    <p><span id="username">User</span></p>
+    <p><small id="asis3">Caffeineアカウント<br>(ローカル)</small></p>
+    
+    </div>
+</div>
+<div class="O">
+        <p onclick="detailalert()" style="text-align: center;">Caffeine Movie<br><small>A framework for supporting browser video decoding</small><br>©2024 Y.Yokoha All Rights Reserved.<br><small>Click to show details!</small></p>
+        <div class="marks-container">
+            <div class="marks-r-y" id="bk2main"><p>メインページに戻る</p></div>
+        </div>
+        <script>
+            document.getElementById("bk2main").addEventListener("click",()=>{window.location.href="https://caffeineapps.pages.dev";});
+        </script>
+</div>
+</div>
+<script src="./wdvs.js"></script>
+<script src="./asis.js"></script>
+<script src="./mvsys.js"></script>
+<script src="./assistsc.js"></script>
+<script>
+
+
+window.addEventListener("load",()=>
+{
+setTimeout(()=>
+{
+document.getElementById("splash").style.display="none";
+document.getElementById("main").style.display="flex";
+document.getElementById("main").style.flexDirection="column";
+document.getElementById("main").style.alignItems="center";
+}
+,3000);
+
+}
+);
+
+function detailalert()
+{
+    alert("The developer:Y.Yokoha(横茶横葉) Y.Yokoha Studio Project");
+    alert("mvsys.js/assisitsc.js are licensed under Y.Yokoha B License.");
+    alert("CaffeineCSS is licensed under Y.Yokoha A License.");
+    alert("Thank you for using! I really appreciate you using this!");
+}
+
+
+</script>
+<script src="./das.js"></script>
+</body>
+</html>

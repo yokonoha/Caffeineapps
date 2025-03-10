@@ -1,0 +1,403 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+    <meta name="twitter:title" content="Caffeine Account">
+    <meta name="twitter:description" content="Manage and personalize your Caffeine local account/Caffeineアカウントを管理できます。">
+    <meta name="description" content="Manage and personalize your Caffeine local account/Caffeineアカウントを管理できます。">
+   
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <title id="000">Caffeineアカウント設定メニュー</title>
+  <link href="caffeine.css" rel="stylesheet" id="caffeinetheme"/>
+  <meta charset="UTF-8">
+</head>
+<style>
+    #main
+{
+    display: none; 
+}
+#splash
+{
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 100vh;
+    background-color: #fff;
+    display: flex;
+    align-items: center;
+    justify-content:center;
+    z-index: 1000;
+    background-image: url('./art.png'); 
+            background-size: cover; 
+            background-position: center;
+            background-repeat: no-repeat;
+}
+.fade-in {
+            animation: fadeIn 1s ease-out;
+        }
+
+        @keyframes fadeIn {
+            from { opacity: 0; }
+            to { opacity: 1; }
+        }
+</style>
+<body>
+    <div id="splash" >
+        <div id="splashc"style="width: 80vw; display: flex;align-items: center;justify-content:center;">
+        <div class="C">
+            <div class="A">  
+                <div class="title">  
+                <img src="./music.png" width="15%" height="15%" id="acimg3" style="border-radius: 500px;">  
+                <h1>Caffeine Account Settings</h1>   
+                 </div>  
+                 </div>  
+                 <div class="marks-container">
+                 <div class="marks-r-b2">
+                     <p>Rev.0.1(Beta) <span id="currentname3">ユーザー</span><span id="onlyJapanese2">様</span></p>  
+                 </div>  
+                 </div>
+        </div> </div>
+        </div>
+        <div id="main" class="fade-in">
+  <div class="A" style="justify-content: center; align-items: center; display: flex; flex-direction: column;">  
+    <img src="./ic2.png" width="25%" height="25%" id="acimg" style="border-radius: 500px;"> 
+    <div class="title">  
+     
+    <h2 id="001">Caffeineアカウント設定</h2>   
+     </div>  
+     <p><span id="greetwords">こんにちは、</span><span id="currentname2">ユーザー</span><span id="onlyJapanese">様</span></p>
+     </div>  
+     <div class="cnt"><p></p></div>
+     <div class="cnt"><p></p></div>
+     <div class="cnt"><p></p></div>
+     <div class="cnt"><p></p></div>
+     <div class="B"> 
+
+
+    </div> 
+    
+    <div class="cnt"><p></p></div>
+    <div class="cnt"><p></p></div>
+    <div class="cnt"><p></p></div>
+    <div class="cnt"><p></p></div>
+    
+    <div class="C">  
+<!-- ここに要素を挿入-->
+<h2 id="003">Caffeineアカウントとは?</h2>
+<p id="004">Caffeineアカウントとは、CaffeineAppsの設定やデータ管理を簡単に行えるように自動で作成されるローカルアカウントです。この設定ページでは、あなたのアカウントをカスタマイズできます。</p>
+<p id="005">サーバーではなく、お使いのデバイス上にアカウントが作成されるため、ここで使用しているアカウントは現在実行中のブラウザーでのみ利用可能です。ローカル環境で全てが完結するため、画像などのデータ漏洩のリスクを最小限に抑えることができます。</p>
+<p id="006">そのため、デバイスを切り替える際にデータを引き継ぐには、エクスポートとインポートが必要です。</p>
+    </div>  
+    
+    <div class="cnt"><p></p></div>
+    <div class="cnt"><p></p></div>
+    <div class="cnt"><p></p></div>
+    <div class="cnt"><p></p></div>
+    
+    <div class="D">  
+<!-- ここに要素を挿入-->
+
+    </div>  
+    
+    <div class="cnt"><p></p></div>
+    <div class="cnt"><p></p></div>
+    <div class="cnt"><p></p></div>
+    <div class="cnt"><p></p></div>
+    
+    <div class="E">  
+<!-- ここに要素を挿入-->
+<h3 id="008">アカウント名設定</h3>
+<p id="009">アカウントの名前を変更するには下の入力欄に入力して設定ボタンを押してください。</p>
+<br>
+<p id="007">現在のアカウント名:</p>
+<p id="currentname">User</p>
+<div style="display: flex; flex-direction: row;">
+<input type="text" placeholder="User" id="usernametextbox">  
+<button id="022" onclick="decidename()">ユーザー名を適用する</button>
+</div>  
+</div>
+    
+    <div class="cnt"><p></p></div>
+    <div class="cnt"><p></p></div>
+    <div class="cnt"><p></p></div>
+    <div class="cnt"><p></p></div>
+    
+    <div class="F">  
+<!-- ここに要素を挿入-->
+
+    </div>  
+    
+    <div class="cnt"><p></p></div>
+    <div class="cnt"><p></p></div>
+    <div class="cnt"><p></p></div>
+    <div class="cnt"><p></p></div>
+    
+    <div class="G">  
+<!-- ここに要素を挿入-->
+<h3 id="002">アカウントユーザー画像設定</h3>
+<img src="./ic2.png" width="40%" id="acimg2" style="border-radius: 500px;">
+<canvas id="kagemusya" width="400px" height="400px" style="display: none;"></canvas>
+<br>
+<p id="010">設定したい画像を選択してください。画像はデバイス内で処理され、デバイス内に保存されます。</p>
+<input type="file" accept="image/*" id="import">
+    </div>  
+    
+    <div class="cnt"><p></p></div>
+    <div class="cnt"><p></p></div>
+    <div class="cnt"><p></p></div>
+    <div class="cnt"><p></p></div>
+    
+    <div class="H">  
+<!-- ここに要素を挿入-->
+
+    </div>
+    <div class="cnt"><p></p></div>
+    <div class="cnt"><p></p></div>
+    <div class="cnt"><p></p></div>
+    <div class="cnt"><p></p></div>
+    <div class="I">  
+        <!-- ここに要素を挿入-->
+        <h3 id="011">アカウントデータ使用量</h3>  
+        <div class="marks-container">
+            <div class="marks-r-g">
+                <p id="012">ベータ版</p>
+            </div>
+        </div>
+        <p></p>
+        <p id="013">正確な使用量はブラウザー開発者ツールからご覧いただけます。</p>
+        <div class="A" style="display: flex; flex-direction: row; justify-content: space-between; align-items: center;" id="datausagecontainer">
+            <progress id="datausagebar" value="0" max="100" style="width: 100%;"></progress>
+            <p id="datausage">0MB/5MB</p>
+        </div>
+        <p id="014">現在使用しているアカウントのローカル保存領域を表示しています。</p>
+        <p id="015">ブラウザーの制約上、4~5MBのみ個人データを保存できます。(ブラウザーにより、保存可能容量は異なるため、あくまで目安です。)</p>
+        <p id="016">4MB前後に達した場合は、サービスを正常にお使いいただけなくなる可能性があります。不要なデータは<a href="#cleanup">クリーンアップ</a>して下さい。</p>
+     </div>
+     <div class="cnt"><p></p></div>
+     <div class="cnt"><p></p></div>
+     <div class="cnt"><p></p></div>
+     <div class="cnt"><p></p></div>
+     <div class="J">  
+                <!-- ここに要素を挿入-->
+             
+     </div>
+    <div class="cnt"><p></p></div>
+    <div class="cnt"><p></p></div>
+    <div class="cnt"><p></p></div>
+    <div class="cnt"><p></p></div>
+    <div class="K" id="cleanup">  
+     <!-- ここに要素を挿入-->
+        <h3 id="017">データのクリーンアップ(Now preparing...Out of order)</h3>   
+        <p id="018">不要なデータを消去できます。以下から削除(初期化)したいサービスを選んで、消去ボタンを押して下さい。</p>
+        <div style="display: flex; align-items: center;"><input type="checkbox"><p>CaffeineMovie(0KB)</p></div>
+        <div style="display: flex; align-items: center;"><input type="checkbox"><p>CaffeineMusic(0KB)</p></div>
+        <div style="display: flex; align-items: center;"><input type="checkbox"><p>CaffeineMemo(0KB)</p></div>
+        <div style="display: flex; align-items: center;"><input type="checkbox"><p>(0KB)</p></div>
+        <div style="display: flex; align-items: center;"><input type="checkbox"><p id="019">Caffeineアカウントデータ(アカウント名、画像)(0KB)</p></div>
+        <br>
+        <br>
+        <button onclick="delselecteddata()" id="020">選択したアプリのデータを削除する(この操作は取り消すことができません。ご注意下さい。)</button>
+         
+     </div>
+     <div class="cnt"><p></p></div>
+     <div class="cnt"><p></p></div>
+     <div class="cnt"><p></p></div>
+     <div class="cnt"><p></p></div>
+     <div class="L">  
+      <!-- ここに要素を挿入-->
+                         
+      </div>
+      <div class="cnt"><p></p></div>
+      <div class="cnt"><p></p></div>
+      <div class="cnt"><p></p></div>
+      <div class="cnt"><p></p></div>
+      <div class="M">  
+       <!-- ここに要素を挿入-->
+        <h3 id="021">アカウントデータのエクスポート/インポート</h3>
+        <p id="023">エクスポートすることで、データのバックアップやアカウント設定データを他の端末へコピーができるようになります。この操作によってデータは消去されることはありません。</p>
+        <p>未実装- 実装は未定です。</p>
+       </div>
+    <div class="cnt"><p></p></div>
+    <div class="cnt"><p></p></div>
+    <div class="cnt"><p></p></div>
+    <div class="cnt"><p></p></div>
+    <div class="L">  
+  <!-- ここに要素を挿入-->
+
+    </div>
+    <div class="cnt"><p></p></div>
+    <div class="cnt"><p></p></div>
+    <div class="cnt"><p></p></div>
+    <div class="cnt"><p></p></div>
+    <div class="M">  
+    <!-- ここに要素を挿入-->
+
+    </div>
+    <div class="cnt"><p></p></div>
+    <div class="cnt"><p></p></div>
+    <div class="cnt"><p></p></div>
+    <div class="cnt"><p></p></div>
+    <div class="N">  
+    <!-- ここに要素を挿入-->
+
+    </div>
+    <div class="cnt"><p></p></div>
+    <div class="cnt"><p></p></div>
+    <div class="cnt"><p></p></div>
+    <div class="cnt"><p></p></div>
+    <div class="O">  
+    <!-- ここに要素を挿入-->
+
+    </div>
+    <div class="cnt"><p></p></div>
+    <div class="cnt"><p></p></div>
+    <div class="cnt"><p></p></div>
+    <div class="cnt"><p></p></div>
+    <div class="P">  
+    <!-- ここに要素を挿入-->
+
+    </div>
+    <div class="cnt"><p></p></div>
+    <div class="cnt"><p></p></div>
+    <div class="cnt"><p></p></div>
+    <div class="cnt"><p></p></div>
+    <div class="Q">  
+    <!-- ここに要素を挿入-->
+
+    </div>
+    <div class="cnt"><p></p></div>
+    <div class="cnt"><p></p></div>
+    <div class="cnt"><p></p></div>
+    <div class="cnt"><p></p></div>
+    <div class="R">  
+    <!-- ここに要素を挿入-->
+
+    </div>
+    <div class="cnt"><p></p></div>
+    <div class="cnt"><p></p></div>
+    <div class="cnt"><p></p></div>
+    <div class="cnt"><p></p></div>
+    <div class="S">  
+    <!-- ここに要素を挿入-->
+
+    </div>
+    <div class="cnt"><p></p></div>
+    <div class="cnt"><p></p></div>
+    <div class="cnt"><p></p></div>
+    <div class="cnt"><p></p></div>
+    <div class="T">  
+    <!-- ここに要素を挿入-->
+
+    </div>
+    <div class="cnt"><p></p></div>
+    <div class="cnt"><p></p></div>
+    <div class="cnt"><p></p></div>
+    <div class="cnt"><p></p></div>
+    <div class="U">  
+    <!-- ここに要素を挿入-->
+
+    </div>
+    <div class="cnt"><p></p></div>
+    <div class="cnt"><p></p></div>
+    <div class="cnt"><p></p></div>
+    <div class="cnt"><p></p></div>
+    <div class="V">  
+    <!-- ここに要素を挿入-->
+
+    </div>
+    <div class="cnt"><p></p></div>
+    <div class="cnt"><p></p></div>
+    <div class="cnt"><p></p></div>
+    <div class="cnt"><p></p></div>
+    <div class="W">  
+    <!-- ここに要素を挿入-->
+
+    </div>
+    <div class="cnt"><p></p></div>
+    <div class="cnt"><p></p></div>
+    <div class="cnt"><p></p></div>
+    <div class="cnt"><p></p></div>
+    <div class="X">  
+    <!-- ここに要素を挿入-->
+
+    </div>
+    <div class="cnt"><p></p></div>
+    <div class="cnt"><p></p></div>
+    <div class="cnt"><p></p></div>
+    <div class="cnt"><p></p></div>
+    <div class="Y">  
+    <!-- ここに要素を挿入-->
+
+    </div>
+    <div class="cnt"><p></p></div>
+    <div class="cnt"><p></p></div>
+    <div class="cnt"><p></p></div>
+    <div class="cnt"><p></p></div>
+    <div class="Z">  
+    <!-- ここに要素を挿入-->
+
+    </div>
+
+    <footer>
+        <div class="marks-container">
+            <div class="marks-r-y" id="bk2main"><p>メインページに戻る</p></div>
+        </div>
+        <script>
+            document.getElementById("bk2main").addEventListener("click",()=>{window.location.href="https://caffeineapps.pages.dev";});
+        </script>
+        <p>©2025 YokochaYokoha (Y.Yokoha Studio Projects) All Rights Reserved.</p>
+       <!-- <a href="https://yokonoha.github.io/readme" id="footer001">Terms of Services/利用規約</a>-->
+       <p><small>このページでは<a href="https://github.com/yokonoha/FSLinear" id="interchangeablecssprofiles">FSLinear</a>を使用しています。</small></p>
+    <p>Help us <a href="./translation.html">translations</a> to make this service useful!</p>
+    </footer>
+</div>
+</body>
+<script src="./wdvs.js"></script>
+<script src="./spmgr.js"></script>
+<script>/*
+    const detectlang=navigator.language||navigator.languages[0];
+    if (detectlang.includes("ja"))
+    {
+        document.getElementById("footer001").innerText="Terms of Services";
+        document.getElementById("footer002").innerHTML="<small>This Web App uses <a href='https://github.com/yokonoha/Caffeine_CSS'>Caffeine_CSS</a> for theming</small>";
+        document.getElementById("greetwords").innerText="Welcome,";
+        document.getElementById("onlyJapanese").innerText="";
+        document.getElementById("onlyJapanese2").innerText="";
+        document.getElementById("000").innerText="Caffeine Account Settings Menu";
+        document.getElementById("001").innerText="Caffeine Account Settings";
+        document.getElementById("002").innerText="Account User Image Settings";
+        document.getElementById("003").innerText="About Caffeine Account";
+        document.getElementById("004").innerText="Caffeine Accounts are local accounts that are automatically created to allow users to easily configure CaffeineApps and manage its data.";
+        document.getElementById("005").innerText="Because the account is created on your device and not on the servers, the account used here is only available in the browser you are currently running in.";
+        document.getElementById("006").innerText="Therefore, exporting and importing are required to carry over data when switching devices. We apologize for the inconvenience, but since everything is completed in the local environment, the risk of data leakage, such as images, is minimized.";
+        document.getElementById("007").innerText="Current Account Name:";
+        document.getElementById("008").innerText="Account Name Settings";
+        document.getElementById("009").innerText="To change the name of your account, enter your desired name in the input field below and press the Set button.";
+        document.getElementById("010").innerText="Select the image you wish to set. The image will be processed and stored only in this device.";
+        document.getElementById("011").innerText="Account Data Usage";
+        document.getElementById("012").innerText="Beta Feature";
+        document.getElementById("013").innerText="You can check the accurate usage status via this browser's Dev Tools.";
+        document.getElementById("014").innerText="Local storage space for the account you are currently using is shown.";
+        document.getElementById("015").innerText="Due to browser limitations, only 4~5 MB of personal data can be stored. (This is only a guideline, as the amount of storage space available varies depending on the browser.)";
+        document.getElementById("016").innerHTML="If you reach around 4MB, you may not be able to use the service properly. Please <a href='#cleanup'>clean up</a> unnecessary data.";
+        document.getElementById("017").innerText="Data Cleanup";
+        document.getElementById("018").innerText="You can erase unnecessary data. Select the service you wish to delete (initialize) the data from the list below and press the Erase button.";
+        document.getElementById("019").innerText="Caffeine Account Basic Data (Include user name and user image)";
+        document.getElementById("020").innerText="Delete the data of the selected application (This operation cannot be undone. Please note that this operation cannot be undone)";
+        document.getElementById("021").innerText="Account Data Import & Export";
+        document.getElementById("022").innerText="Apply username";
+        document.getElementById("023").innerText="Data Export allows data backup and account setup data to be copied to other devices. Data will not be erased by this operation.";
+    }
+    else
+    {
+
+    }*/
+</script>
+<script src="./aimgcnt.js"></script>
+<script src="./calcls.js"></script>
+<script src="./accountmanager.js"></script>
+<script src="./dusd.js"></script>
+<script src="./das.js"></script>
+<script src="./themeac.js"></script>
+</html>

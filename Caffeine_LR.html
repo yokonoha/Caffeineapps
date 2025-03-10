@@ -1,0 +1,246 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <title>Coffee LR -A Multi-search Assistant</title>
+  <link href="caffeine.css" rel="stylesheet" id="caffeinetheme"/>
+  <meta charset="UTF-8">
+</head>
+<style>
+            input[type="text"] {
+            width: 200px;
+            padding: 10px;
+            margin: 10px 0;
+        }
+        
+   button {
+       font-family: sans-serif ;
+            padding: 10px 20px;
+            background: #dd6262;
+            color: #fff;
+            border: none;
+            cursor: pointer;
+       display: inline-block;
+       appearance: none;
+       border-radius: 5px;
+        }
+        #main
+{
+    display: none; 
+}
+#splash
+{
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 100vh;
+    background-color: #fff;
+    display: flex;
+    align-items: center;
+    justify-content:center;
+    z-index: 1000;
+    background-image: url('./art.png'); 
+            background-size: cover; 
+            background-position: center;
+            background-repeat: no-repeat;
+}
+.fade-in {
+            animation: fadeIn 1s ease-out;
+        }
+
+        @keyframes fadeIn {
+            from { opacity: 0; }
+            to { opacity: 1; }
+        }
+</style>
+<body>
+    <div id="splash" >
+        <div id="splashc"style="width: 80vw; display: flex;align-items: center;justify-content:center;">
+        <div class="C">
+            <div class="A">  
+                <div class="title">  
+                <img src="./LRlogo.png" width="15%" height="15%">  
+                <h1>CaffeineLinks</h1>   
+                 </div>  
+                 </div>  
+                 <div class="marks-container">
+                 <div class="marks-r-b2">
+                     <p>Rev.1.0(Release)-Caffeine_CSS Rev.4</p>  
+                 </div>  
+                 </div>
+        </div> </div>
+        </div>
+        <div id="main" class="fade-in">
+  <div class="A">  
+    <div class="title" style="align-items: center; justify-content: center;">  
+    <img src="./LRlogo.png" width="15%" height="15%">  
+    <h3>CaffeineL</h3>
+    <p><small>--Generates search "<u>L</u>inks to Redirect"</small></p>
+
+     </div> 
+     <div id="accountdetails">
+        <div class="T" id="dropdownarea" style="align-items: center; display: flex; flex-direction: column;">
+            <p onclick="closeaccountdiv()" id="asis1">閉じる</p>
+            <a href="https://caffeineapps.pages.dev/account" target="_blank">
+                <img src="./ic.png" style="height: 50px; border-radius: 500px;" id="accountview"></a>
+        <p><span id="username" id="asis2">User</span></p>
+        <p><small id="asis3">Caffeineアカウント<br>(ローカル)</small></p>
+        </div> </div>
+     </div>  
+     <div class="cnt"><p></p></div>
+     <div class="cnt"><p></p></div>
+     <div class="cnt"><p></p></div>
+     <div class="cnt"><p></p></div>
+     <div class="B"> 
+        <div class="marks-container">
+<!--マーク化テンプレート/Marks template-->
+<input type="text" id="searchQuery" placeholder="Search/ここに入力して検索">
+<!--div B Start--><br>
+<button onclick="deletequery()">削除</button>
+</div>
+<!--div B End-->
+    </div> 
+    
+    <div class="cnt"><p></p></div>
+    <div class="cnt"><p></p></div>
+    <div class="cnt"><p></p></div>
+    <div class="cnt"><p></p></div>
+    
+    <div class="C">  
+<!-- ここに要素を挿入-->
+<div class="marks-container"><!--横並び用(align vertically)-->
+    <div class="marks-r-b2" id="gbtn">
+        <p>Google検索</p>
+    </div>
+    <div class="marks-r-y" id="dbtn">
+        <p>DuckDuckGo検索</p>
+    </div>
+    <div class="marks-r-b" id="ubtn">
+        <p>URL</p>
+    </div>
+
+    </div>
+</div>
+    
+
+    
+    <div class="D">  
+<!-- ここに要素を挿入-->
+<div class="marks-container"><!--横並び用(align vertically)-->
+
+    <div class="marks-r-o" id="ybtn">
+        <p>YouTube検索</p>
+    </div>
+    <div class="marks-r-r" id="nbtn">
+        <p>ニコニコ動画検索</p>
+    </div>
+</div>
+    </div>  
+    
+    <div class="cnt"><p></p></div>
+    <div class="cnt"><p></p></div>
+
+   <div class="cnt"><p></p></div>
+    <div class="cnt"><p></p></div>
+    <div class="E">  
+<!-- ここに要素を挿入-->
+
+    </div>  
+    
+    <div class="cnt"><p></p></div>
+    <div class="cnt"><p></p></div>
+    <div class="cnt"><p></p></div>
+    <div class="cnt"><p></p></div>
+    
+    <div class="F">  
+<!-- ここに要素を挿入-->
+<h3>権利表記(Copyright Notice) ™や®マークは一部の箇所で省略されている場合があります。</h3>
+<p>Google,YouTubeはGoogle LLCの商標または登録商標です。</p>
+  <p>ニコニコ動画は株式会社ドワンゴの商標または登録商標です。</p>
+  <p>QRコードは株式会社デンソーウェーブの商標または登録商標です。</p>
+    <p>DuckDuckGoはDuck Duck Go, Inc.の商標または登録商標です。</p>
+    </div>  
+ 
+
+    <footer>
+        <div class="marks-container">
+            <div class="marks-r-y" id="bk2main"><p>メインページに戻る</p></div>
+        </div>
+        <script>
+            document.getElementById("bk2main").addEventListener("click",()=>{window.location.href="https://caffeineapps.pages.dev";});
+        </script>
+<p><small>このページでは<a href="https://github.com/yokonoha/Caffeine_CSS" id="interchangeablecssprofiles">CaffeineCSS</a>を使用しています。</small></p>
+    </footer>
+</div>
+</body>
+<script src="./wdvs.js"></script>
+<script src="./asis.js"></script>
+<script src="./spmgr.js"></script>
+<script src="./themeac.js"></script>
+<script>
+    function deletequery(){
+        document.getElementById('searchQuery').value="";
+    }
+document.getElementById("gbtn").addEventListener("click",()=>{
+    var query = document.getElementById('searchQuery').value;
+            if (query) {
+                var url = "https://www.google.co.jp/search?q=" + encodeURIComponent(query);
+
+                window.open(url,"_blank");
+
+            } else {
+                
+                window.open("https://www.google.co.jp","_blank");
+            }
+});
+document.getElementById("dbtn").addEventListener("click",()=>{
+    var query = document.getElementById('searchQuery').value;
+            if (query) {
+                var url = "https://duckduckgo.com/?q=" + encodeURIComponent(query);
+                window.open(url,"_blank");
+
+            } else {
+               
+                window.open("https://duckduckgo.com/","_blank");
+            }
+});
+document.getElementById("ubtn").addEventListener("click",()=>{
+    var query = document.getElementById('searchQuery').value;
+            if (query) {
+                var url = query;
+                window.open(url,"_blank");
+
+            } else {
+       alert('検索ボックス内にURLが入力されていません。入力をお願いいたします。');
+            }
+});
+document.getElementById("ybtn").addEventListener("click",()=>{
+    var query = document.getElementById('searchQuery').value;
+            if (query) {
+                var url = "https://www.youtube.com/results?search_query=" + encodeURIComponent(query);
+document.cookie = "URL:" + "expires=60;" + "path=/";
+                window.open(url,"_blank");
+
+            } else {
+               
+                window.open("https://www.youtube.com","_blank");
+            }
+});
+document.getElementById("nbtn").addEventListener("click",()=>{
+    var query = document.getElementById('searchQuery').value;
+            if (query) {
+                var url = "https://sp.nicovideo.jp/search/" + encodeURIComponent(query);
+document.cookie = "URL:" + "expires=60;" + "path=/";
+                window.open(url,"_blank");
+
+            } else {
+                
+                window.open("https://sp.nicovideo.jp","_blank");
+            }
+});
+
+</script>
+<script src="./dusd.js"></script>
+<script src="./das.js"></script>
+</html>

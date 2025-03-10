@@ -1,0 +1,229 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <meta name="twitter:title" content="Caffeine Movie by Y.Yokoha Studio Projects">
+  <meta name="twitter:description" content="CaffeineCSSを活用したメモWebアプリ(ローカル保存)">
+  <meta name="description" content="CaffeineCSSを活用したメモWebアプリ(ローカル保存)">
+ 
+  <title>Caffeine Memo</title>
+  <meta charset="UTF-8">
+  <link href="fslinear.css" rel="stylesheet" id="caffeinetheme"/>
+</head>
+<style>
+#splash
+{
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 100vh;
+    background-color: #fff;
+    display: flex;
+    align-items: center;
+    justify-content:center;
+    z-index: 1000;
+    background-image: url('./video.png'); 
+            background-size: cover; 
+            background-position: center;
+            background-repeat: no-repeat;
+}
+</style>
+<body>
+    <div id="splash" >
+        <div id="splashc"style="width: 80vw; display: flex;align-items: center;justify-content:center;">
+        <div class="C">
+            <div class="A">  
+                <div class="title">  
+                <img src="./movie.png" width="15%" height="15%">  
+                <h1>Caffeine Memo</h1>   
+                 </div>  
+                 </div>  
+                 <div class="marks-container">
+                 <div class="marks-r-o">
+                     <p>Rev.1.0(Release)-CaffeineCSS Rev.4</p>  
+                 </div>  
+                 </div>
+        </div> </div>
+        </div>
+
+
+
+
+        <p></p>
+        <div class="G">
+            <h3 id="002">CaffeineMemoへようこそ、<span id="username">ユーザー</span><span id="onlyJapanese">さん</span>!</h3>
+            <p id="001">5つのスペースにメモを書き込むことができます(1スペース最大約2万文字)。<br>メモはこのブラウザー内に自動保存されるため、保存ボタンを押さなくても保存されます。</p>
+
+        </div>
+        <div class="cnt"><p></p></div>
+        <div class="cnt"><p></p></div>        <div class="G"  id="accountdetails">
+            <p onclick="closeaccountdiv()" id="asis1">閉じる</p>
+            <a href="./account.html"><img src="./ic.png" style="height: 50px; border-radius: 500px;" id="accountview"></a>
+            <div class="I" id="dropdownarea">
+                <p><small id="asis4">ようこそ</small></p>
+            <p><span id="username2">User</span></p>
+            <p><small id="asis3">Caffeineアカウント<br>(ローカル)</small></p>
+            
+            </div>
+        </div>
+        <div class="cnt"><p></p></div>
+        <div class="W">
+            <h3 id="003">スペース1</h3>
+            <textarea id="textbox1" type="text" maxlength="20000"  style=" width: 75vw; max-width: 100%; height: 40vh; border-color: rgb(209, 245, 142); border-style:dashed; background-color: rgb(248, 250, 235); border-radius: 5px; resize: vertical;"></textarea>
+            <p><span id="t1mj">0/20000文字</span> <span id="t1remain">あと20000文字記録できます。</span></p>
+            <br>
+    <!--       <p>入力支援機能</p>
+            <div class="marks-container">
+                
+                <div class="marks-r-y">
+                    <p id="t01">全てコピー</p>
+                </div>
+                <div class="marks-r-o">
+                    <p id="t02">貼り付け</p>
+                </div>
+                <div class="marks-r-b">
+                    <p id="t03">文字置き換え機能</p>
+                </div>
+            </div>
+            <div class="S" id="repdiv" style="display: none;">
+            <h3 id="t04">文字の置き換え</h3>
+                <p id="t05">上のテキストボックスに置き換える対象となる文字、下のテキストボックスに置き換え後の文字を入力して、実行ボタンを押して下さい。</p>
+                <input id="t06" type="text" style="width: 35%;" placeholder="置換前">
+                <br>
+                <input id="t07" type="text" style="width: 35%;" placeholder="置換後">
+                <button onclick="reptxt()">置き換えを実行する</button>
+            </div>
+    -->     </div>
+        <div class="cnt"><p></p></div>
+        <div class="cnt"><p></p></div>
+        <div class="cnt"><p></p></div>
+        <div class="B">
+            <h3>スペース2</h3>
+            <textarea id="textbox2" type="text" maxlength="20000"  style=" width: 75vw; max-width: 100%; height: 40vh; border-color: rgb(209, 245, 142); border-style:dashed; background-color: rgb(248, 250, 235); border-radius: 5px; resize: vertical;"></textarea>
+            <p><span id="t12mj">0/20000文字</span> <span id="t12remain">あと20000文字記録できます。</span></p>
+            <br>
+        <!--    <p>入力支援機能</p>
+            <div class="marks-container">
+                
+                <div class="marks-r-y">
+                    <p id="t201">全てコピー</p>
+                </div>
+                <div class="marks-r-o">
+                    <p id="t202">貼り付け</p>
+                </div>
+                <div class="marks-r-b">
+                    <p id="t203">文字置き換え機能</p>
+                </div>
+            </div>
+            <div class="S" id="repdiv2" style="display: none;">
+            <h3 id="t204">文字の置き換え</h3>
+                <p id="t205">上のテキストボックスに置き換える対象となる文字、下のテキストボックスに置き換え後の文字を入力して、実行ボタンを押して下さい。</p>
+                <input id="t206" type="text" style="width: 35%;" placeholder="置換前">
+                <br>
+                <input id="t207" type="text" style="width: 35%;" placeholder="置換後">
+                <button onclick="reptxt2()">置き換えを実行する</button>
+            </div>
+        -->  </div>
+        <div class="cnt"><p></p></div>
+        <div class="cnt"><p></p></div>
+        <div class="cnt"><p></p></div>
+        <div class="K">
+            <h3>スペース3</h3>
+            <textarea id="textbox3" type="text" maxlength="20000"  style="max-width: 100%; width: 75vw;  height: 40vh; border-color: rgb(209, 245, 142); border-style:dashed; background-color: rgb(248, 250, 235); border-radius: 5px; resize: vertical;"></textarea>
+            <p><span id="t13mj">0/20000文字</span> <span id="t13remain">あと20000文字記録できます。</span></p>
+            <br>
+       <!--     <p>入力支援機能</p>
+            <div class="marks-container">
+                
+                <div class="marks-r-y">
+                    <p id="t301">全てコピー</p>
+                </div>
+                <div class="marks-r-o">
+                    <p id="t302">貼り付け</p>
+                </div>
+                <div class="marks-r-b">
+                    <p id="t303">文字置き換え機能</p>
+                </div>
+               </div>
+            <div class="S" id="repdiv3" style="display: none;">
+            <h3 id="t304">文字の置き換え</h3>
+                <p id="t305">上のテキストボックスに置き換える対象となる文字、下のテキストボックスに置き換え後の文字を入力して、実行ボタンを押して下さい。</p>
+                <input id="t306" type="text" style="width: 35%;" placeholder="置換前">
+                <br>
+                <input id="t307" type="text" style="width: 35%;" placeholder="置換後">
+                <button onclick="reptxt3()">置き換えを実行する</button>
+            </div>
+    -->    </div>
+        <div class="cnt"><p></p></div>
+        <div class="cnt"><p></p></div>
+        <div class="cnt"><p></p></div>
+        <div class="P">
+            <h3>スペース4</h3>
+            <textarea id="textbox4" type="text" maxlength="20000"  style=" width: 75vw; max-width: 100%; height: 40vh; border-color: rgb(209, 245, 142); border-style:dashed; background-color: rgb(248, 250, 235); border-radius: 5px; resize: vertical;"></textarea>
+            <p><span id="t14mj">0/20000文字</span> <span id="t14remain">あと20000文字記録できます。</span></p>
+            <br>
+        <!--    <p>入力支援機能</p>
+            <div class="marks-container">
+               
+                <div class="marks-r-y">
+                    <p id="t401">全てコピー</p>
+                </div>
+                <div class="marks-r-o">
+                    <p id="t402">貼り付け</p>
+                </div>
+                <div class="marks-r-b">
+                    <p id="t403">文字置き換え機能</p>
+                </div>
+            </div>
+            <div class="S" id="repdiv4" style="display: none;">
+            <h3 id="t404">文字の置き換え</h3>
+                <p id="t405">上のテキストボックスに置き換える対象となる文字、下のテキストボックスに置き換え後の文字を入力して、実行ボタンを押して下さい。</p>
+                <input id="t406" type="text" style="width: 35%;" placeholder="置換前">
+                <br>
+                <input id="t407" type="text" style="width: 35%;" placeholder="置換後">
+                <button onclick="reptxt4()">置き換えを実行する</button>
+            </div>
+        -->   </div>
+        <footer>
+            <div class="marks-container">
+                <div class="marks-r-y" id="bk2main"><p>メインページに戻る</p></div>
+            </div>
+            <script>
+                document.getElementById("bk2main").addEventListener("click",()=>{window.location.href="https://caffeineapps.pages.dev";});
+            </script>
+            <p><small>このページでは<a href="https://github.com/yokonoha/FSLinear" id="interchangeablecssprofiles">FSLinear</a>を使用しています。</small></p>  
+          </footer>
+</body>
+<script src="./wdvs.js"></script>
+<script src="./asis.js"></script>
+<script src="./memocntsys.js"></script>
+<script src="./themeac.js"></script>
+<script>
+    window.addEventListener("load",()=>
+{
+setTimeout(()=>
+{
+document.getElementById("splash").style.display="none";
+document.getElementById("main").style.display="flex";
+document.getElementById("main").style.flexDirection="column";
+document.getElementById("main").style.alignItems="center";
+}
+,3000);
+
+}
+);
+const username2=document.getElementById("username2");
+let usrnamee=localStorage.getItem("username");
+if (usrnamee=="")
+{
+    username2.innerText="User"; 
+}
+else
+{
+ username2.innerText=usrnamee;   
+}
+</script>
+<script src="./dusd.js"></script>
+<script src="./das.js"></script>
+</html>
