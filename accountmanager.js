@@ -24,11 +24,16 @@ function decidename()
         }
 }
 //Init
-if (localStorage.getItem("username")!="")
+if (localStorage.getItem("username")!=""&&localStorage.getItem("username")!=null)
 {
 document.getElementById("currentname").innerText=localStorage.getItem("username");
 document.getElementById("currentname2").innerText=localStorage.getItem("username");
 document.getElementById("currentname3").innerText=localStorage.getItem("username");
+}
+else{
+    document.getElementById("currentname").innerText="ユーザー";
+document.getElementById("currentname2").innerText="ユーザー";
+document.getElementById("currentname3").innerText="ユーザー";
 }
 
 

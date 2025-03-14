@@ -1,0 +1,208 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <title>Caffeine DevMenu</title>
+  <link href="caffeine.css" rel="stylesheet" id="caffeinetheme"/>
+  <meta charset="UTF-8">
+</head>
+<style>
+.mkqr {
+ #qrmoji {
+  width: 200px;
+        }
+        }
+        input[type="text"] {
+            width: 80vw;
+            padding: 10px;
+            margin: 10px 0;
+        }
+        button {
+            padding: 10px 20px;
+            background: #fff;
+            color: #111;
+            border: none;
+            cursor: pointer;
+            font-family: sans-serif ;
+            display: inline-block;
+         appearance: none;
+        }
+        #main
+{
+    display: none; 
+}
+#splash
+{
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 100vh;
+    background-color: #fff;
+    display: flex;
+    align-items: center;
+    justify-content:center;
+    z-index: 1000;
+    background-image: url('./art.png'); 
+            background-size: cover; 
+            background-position: center;
+            background-repeat: no-repeat;
+}
+.fade-in {
+            animation: fadeIn 1s ease-out;
+        }
+
+        @keyframes fadeIn {
+            from { opacity: 0; }
+            to { opacity: 1; }
+        }
+      
+
+        
+        #suji {
+            width: 90%;
+            padding: 10px;
+            margin: 10px 0;
+        }
+        #suji2 {
+            width: 10%;
+            padding: 10px;
+            margin: 10px 0;
+        }
+        button {
+            padding: 10px 20px;
+            background: #fff;
+            color: #111;
+            border: none;
+            cursor: pointer;
+            font-family: sans-serif ;
+            display: inline-block;
+         appearance: none;
+        }
+        p{user-select: none;}
+</style>
+<body>
+    <div id="splash" >
+        <div id="splashc"style="width: 80vw; display: flex;align-items: center;justify-content:center;">
+        <div class="C">
+            <div class="A">  
+                <div class="title">  
+                <img src="./music.png" width="15%" height="15%">  
+                <h1>Caffeine DevMenu</h1>   
+                 </div>  
+                 </div>  
+                 <div class="marks-container">
+                 <div class="marks-r-b2">
+                     <p>開発者メニュー -Caffeine_CSS Rev.4</p>  
+                 </div>  
+                 </div>
+        </div> </div>
+        </div>
+        <div id="main" class="fade-in">
+  <div class="A">  
+    <div class="title">  
+ 
+    <h2>Developer Menu</h2>
+    
+     </div>  <p>Welcome to Yokoha Lab!</p>
+     </div>  
+     <div class="cnt"><p></p></div>
+     <div class="cnt"><p></p></div>
+     <noscript><h1 style="color: red;">JavaScriptが無効です。Coffeeブラウザーの場合は、Upline上の「快適読書モード」または「緊急データセーバー」をオフにしてください。JavaScriptが無効な状態では動作しません。</h1></noscript>
+<div class="E">  <p>こちらはWeb開発者向けシステムフラグ書き換えツールです。<br>よく分からない場合は操作しないことをお勧めします。</p>  <p>Other info=>developer tools on your browser</p>
+    <h2>System Flags</h2>
+
+     <!--DEBUG -->
+     <button onclick="debugmenu()">Debug SKP</button>
+     <p>↑Disable & Enable Caffeine Splash Screen<br>provided by splmgr</p>
+     <button onclick="WIPE_ALL_STORAGE()">Debug Wipe All User Data</button>
+     <p>↑THIS FEATURE DELETES ALL YOUR DATA.<br> Please be careful!!</p>
+     
+     <script>
+        
+         function debugmenu()
+         {
+             if(localStorage.getItem("skpsplash")=="1")
+         {
+             localStorage.setItem("skpsplash","0");
+         }
+         else
+         {
+             localStorage.setItem("skpsplash","1");
+         }
+         }
+         function WIPE_ALL_STORAGE()
+         {
+            localStorage.clear();
+         }
+     </script>
+     
+      <!--DEBUG -->
+
+
+</div>
+     <div class="cnt"><p></p></div>
+     <div class="cnt"><p></p></div>
+     
+        <div class="G"  id="accountdetails">
+            <p>CN TST</p>
+            <div  style="display: flex;">
+            <p onclick="closeaccountdiv()" id="asis1" style="display: none;">閉じる</p>
+            <a href="https://caffeineapps.pages.dev/account" target="_blank"><img src="./ic.png" style="height: 70px; border-radius: 500px;" id="accountview"></a>
+
+            <p style="font-size: x-large;"><span id="year"></span>/<span id="month"></span>/<span id="date"></span> <span id="xingqi"></span></p>
+            
+            </div>
+            <p style="font-size: xxx-large;"><span id="hour"></span>点<span id="min"></span>分 <small><span id="sec"></span>秒</small></p>
+            
+            <br>
+            <br>
+            <p>Reported Storage Usage rate<br>By calcLS</p>
+            <p><small>You can check the raw value (KB) on developer tools</small></p>
+            <div class="A" style="display: flex; flex-direction: column; justify-content: space-between; align-items: center;" id="datausagecontainer">
+                <progress id="datausagebar" value="0" max="100" style="width: 100%;"></progress>
+                <p id="datausage">0MB/5MB</p>
+            </div>
+        </div>
+
+    
+    
+    <div class="cnt"><p></p></div>
+    <div class="cnt"><p></p></div>
+    <div class="cnt"><p></p></div>
+    <div class="cnt"><p></p></div>
+    
+    <div class="C" id="dropdownarea">  
+<!-- ここに要素を挿入-->
+    <p>Account Parts used by asis</p>
+        <h3>Registered Name:</h3>
+    <p><span id="username" id="asis2">User</span></p>
+    <p><small id="asis3">Caffeineアカウント<br>(ローカル)</small></p>
+   
+    </div>
+    <div class="cnt"><p></p></div>
+    <div class="cnt"><p></p></div>
+    <div class="cnt"><p></p></div>
+    <div class="cnt"><p></p></div>
+    
+    <footer>
+<div class="marks-container">
+    <div class="marks-r-y" id="bk2main"><p>メインページに戻る</p></div>
+</div>
+<script>
+    document.getElementById("bk2main").addEventListener("click",()=>{window.location.href="https://caffeineapps.pages.dev";});
+</script>
+<p>CaffeineApps - ユニークなWebツール</p>
+<p>©2025 Y.Yokoha All Rights Reserved.</p>
+      <p><small>このページでは<a href="https://github.com/yokonoha/Caffeine_CSS" id="interchangeablecssprofiles">CaffeineCSS</a>を使用しています。</small></p>  
+    </footer>
+</div>
+</body>
+<script src="./wdvs.js"></script>
+<script src="./spmgr.js"></script>
+<script src="./themeac.js"></script>
+ <script src="./asis.js"></script>
+ <script src="./das.js"></script>
+ <script src="./timesysre.js"></script>
+ <script src="./calcls.js"></script>
+</html>

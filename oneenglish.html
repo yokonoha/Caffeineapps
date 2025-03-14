@@ -1,0 +1,171 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <title>One! English! Flashcard! powered - CaffeineApps</title>
+  <link href="caffeine.css" rel="stylesheet" id="caffeinetheme"/>
+  <meta charset="UTF-8">
+</head>
+<style>
+.mkqr {
+ #qrmoji {
+  width: 200px;
+        }
+        }
+        input[type="text"] {
+            width: 80vw;
+            padding: 10px;
+            margin: 10px 0;
+        }
+        button {
+            padding: 10px 20px;
+            background: #fff;
+            color: #111;
+            border: none;
+            cursor: pointer;
+            font-family: sans-serif ;
+            display: inline-block;
+         appearance: none;
+        }
+        #main
+{
+    display: none; 
+}
+#splash
+{
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 100vh;
+    background-color: #fff;
+    display: flex;
+    align-items: center;
+    justify-content:center;
+    z-index: 1000;
+    background-image: url('./art.png'); 
+            background-size: cover; 
+            background-position: center;
+            background-repeat: no-repeat;
+}
+.fade-in {
+            animation: fadeIn 1s ease-out;
+        }
+
+        @keyframes fadeIn {
+            from { opacity: 0; }
+            to { opacity: 1; }
+        }
+      
+
+        
+        #suji {
+            width: 90%;
+            padding: 10px;
+            margin: 10px 0;
+        }
+        #suji2 {
+            width: 10%;
+            padding: 10px;
+            margin: 10px 0;
+        }
+        button {
+            padding: 10px 20px;
+            background: #fff;
+            color: #111;
+            border: none;
+            cursor: pointer;
+            font-family: sans-serif ;
+            display: inline-block;
+         appearance: none;
+        }
+        p{user-select: none;}
+</style>
+<body>
+    <div id="splash" >
+        <div id="splashc"style="width: 80vw; display: flex;align-items: center;justify-content:center;">
+        <div class="C">
+            <div class="A">  
+                <div class="title">  
+                <img src="./music.png" width="15%" height="15%">  
+                <h1>One! English! Flashcard!</h1>   
+                 </div>  
+                 </div>  
+                 <div class="marks-container">
+                 <div class="marks-r-b2">
+                     <p>単語データベースRev.1 -Caffeine_CSS Rev.4</p>  
+                 </div>  
+                 </div>
+        </div> </div>
+        </div>
+        <div id="main" class="fade-in">
+  <div class="A">  
+    <div class="title">  
+        <img src="./music.png" width="15%" height="15%"> 
+    <h2>One! English! Flashcard!</h2>
+    
+     </div>  <p>英単語をランダムに引くだけのWebサイト!<br> どんどん引いて英単語知識UP!</p>
+     <p>このサイトの英単語レベルは <br><u>上級 +α専門用語単語(IT用語)</u> です!</p>
+    <p><small>(熟語も一部出てきます。)</small></p> 
+    </div>  
+     <div class="cnt"><p></p></div>
+     <div class="cnt"><p></p></div>
+     <noscript><h1 style="color: red;">JavaScriptが無効です。Coffeeブラウザーの場合は、Upline上の「快適読書モード」または「緊急データセーバー」をオフにしてください。JavaScriptが無効な状態では動作しません。</h1></noscript>
+<div class="E"> 
+    
+
+<div class="marks-container">
+    <div class="marks-r-y" id="draweng">
+        <h2>英単語くじを引く!</h2>
+    </div>
+</div><p>回数制限なし!<br><small>乱数を使用するため、重複することがあります。</small></p>
+</div>
+     <div class="cnt"><p></p></div>
+     <div class="cnt"><p></p></div>
+     
+     <div class="F"> 
+<h1 id="reseng"></h1>
+
+     </div>
+   
+     <div class="cnt"><p></p></div>
+     <div class="cnt"><p></p></div>
+     <div class="cnt"><p></p></div>
+     <div class="cnt"><p></p></div>
+    <div class="cnt"><p></p></div>
+    <div class="cnt"><p></p></div>
+    <div class="cnt"><p></p></div>
+    <div class="cnt"><p></p></div>
+    <div class="B">
+     
+        <p>わからない単語は辞書を引いて深い意味まで覚えるようにすると定着しやすくなります!</p>
+        <br>
+        <h3>解答集</h3>
+        <p>ページを再読み込みすると消えますのでご注意下さい。</p>
+        <div class="W" id="unknownwords">
+
+        </div>
+    </div>
+    
+    <footer>
+<div class="marks-container">
+    <div class="marks-r-y" id="bk2main"><p>メインページに戻る</p></div>
+</div>
+<script>
+    document.getElementById("bk2main").addEventListener("click",()=>{window.location.href="https://caffeineapps.pages.dev";});
+</script>
+<p>CaffeineApps - ユニークなWebツール</p>
+<p>単語データベース ©2025 Y.Yokoha All Rights Reserved.</p>
+<p>©2025 Y.Yokoha All Rights Reserved.</p>
+      <p><small>このページでは<a href="https://github.com/yokonoha/Caffeine_CSS" id="interchangeablecssprofiles">CaffeineCSS</a>を使用しています。</small></p>  
+    </footer>
+</div>
+</body>
+<script src="./wdvs.js"></script>
+<script src="./spmgr.js"></script>
+<script src="./themeac.js"></script>
+ <script src="./asis.js"></script>
+ <script src="./das.js"></script>
+ <script src="./timesysre.js"></script>
+ <script src="./erfs.js"></script>
+</html>

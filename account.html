@@ -188,12 +188,14 @@
     <div class="cnt"><p></p></div>
     <div class="K" id="cleanup">  
      <!-- ここに要素を挿入-->
-        <h3 id="017">データのクリーンアップ(Now preparing...Out of order)</h3>   
+        <h3 id="017">データのクリーンアップ(Now preparing...)</h3>   
         <p id="018">不要なデータを消去できます。以下から削除(初期化)したいサービスを選んで、消去ボタンを押して下さい。</p>
         <div style="display: flex; align-items: center;"><input type="checkbox"><p>CaffeineMovie(0KB)</p></div>
         <div style="display: flex; align-items: center;"><input type="checkbox"><p>CaffeineMusic(0KB)</p></div>
         <div style="display: flex; align-items: center;"><input type="checkbox"><p>CaffeineMemo(0KB)</p></div>
-        <div style="display: flex; align-items: center;"><input type="checkbox"><p>(0KB)</p></div>
+        <div style="display: flex; align-items: center;"><input type="checkbox"><p>CaffeineCodes(0KB)</p></div>
+        <div style="display: flex; align-items: center;"><input type="checkbox"><p>CaffeineLinks(0KB)</p></div>
+        <div style="display: flex; align-items: center;"><input type="checkbox"><p>CaffeineAppsSettings(設定項目「再表示しない」をクリアします。)(0KB)</p></div>
         <div style="display: flex; align-items: center;"><input type="checkbox"><p id="019">Caffeineアカウントデータ(アカウント名、画像)(0KB)</p></div>
         <br>
         <br>
@@ -232,7 +234,26 @@
     <div class="cnt"><p></p></div>
     <div class="M">  
     <!-- ここに要素を挿入-->
-
+     <h3>CaffeineApps全体のテーマ設定</h3>
+     <p>CaffeineAppsのルックアンドフィールを設定することができます。</p>
+     <label>
+        <input type="radio" value="auto" id="themeacauto" name="tm">
+    時間帯によって自動切り換え(既定)
+    </label>
+    <p>時間帯に応じて自動的に変更</p>
+    <br>
+    <label>
+        <input type="radio" value="ccss" id="themeacccss" name="tm">
+    ライトテーマ(CaffeineCSS)
+    </label>
+    <p>明るくポップなテーマ</p>
+    <br>
+    <label>
+        <input type="radio" value="fsl" id="themeacfsl" name="tm">
+    ダークテーマ(FSLinear)
+    </label>
+    <p>暗く、暗所でも目に優しいテーマ</p>
+    <br>
     </div>
     <div class="cnt"><p></p></div>
     <div class="cnt"><p></p></div>
@@ -241,7 +262,7 @@
     <div class="N">  
     <!-- ここに要素を挿入-->
 
-    </div>
+ </div>
     <div class="cnt"><p></p></div>
     <div class="cnt"><p></p></div>
     <div class="cnt"><p></p></div>

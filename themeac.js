@@ -4,6 +4,7 @@
 //          Rev.1.0            //
 //   Works by Y.Yokoha Studio  //  
 /////////////////////////////////
+//+ Modified by Y.Yokoha for CaffeineApps!
 
 //ご利用前に以下の注意点をご確認ください。
 //1.bodyタグ下に
@@ -56,4 +57,22 @@ else
     footertext.setAttribute("href","https://github.com/yokonoha/Caffeine_CSS");
 footertext.innerText="CaffeineCSS";
     console.log(`[ThemeAC] The Light Theme is now selected. 6:00~17:59`);
+}
+
+//Decide theme by user /0:Auto 1:CCSS 2:FSL
+
+let forceon=localStorage.getItem("forcetheme");
+if (forceon=="1")
+{
+    linkcss.setAttribute("href","caffeine.css");
+    footertext.setAttribute("href","https://github.com/yokonoha/Caffeine_CSS");
+footertext.innerText="CaffeineCSS";
+    console.log(`[ThemeAC] The Light Theme is now selected. (By user selection)`);
+}
+else if(forceon=="2")
+{
+    linkcss.setAttribute("href","fslinear.css");
+    footertext.setAttribute("href","https://github.com/yokonoha/FSLinear");
+    footertext.innerText="FSLinear";
+    console.log(`[ThemeAC] The Dark Theme is now selected. (By user select)`); 
 }

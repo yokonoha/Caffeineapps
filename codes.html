@@ -7,8 +7,8 @@
   <meta charset="UTF-8">
 </head>
 <style>
-.mkqr {
- #qrmoji {
+.mkq {
+ #bmoji {
   width: 200px;
         }
         }
@@ -27,8 +27,54 @@
             display: inline-block;
          appearance: none;
         }
+        #main
+{
+    display: none; 
+}
+#splash
+{
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 100vh;
+    background-color: #fff;
+    display: flex;
+    align-items: center;
+    justify-content:center;
+    z-index: 1000;
+    background-image: url('./art.png'); 
+            background-size: cover; 
+            background-position: center;
+            background-repeat: no-repeat;
+}
+.fade-in {
+            animation: fadeIn 1s ease-out;
+        }
+
+        @keyframes fadeIn {
+            from { opacity: 0; }
+            to { opacity: 1; }
+        }
 </style>
 <body>
+    <div id="splash" >
+        <div id="splashc"style="width: 80vw; display: flex;align-items: center;justify-content:center;">
+        <div class="C">
+            <div class="A">  
+                <div class="title">  
+                <img src="./music.png" width="15%" height="15%">  
+                <h1>Caffeine Codes</h1>   
+                 </div>  
+                 </div>  
+                 <div class="marks-container">
+                 <div class="marks-r-b2">
+                     <p>Rev.1.0(Release)-Caffeine_CSS Rev.4</p>  
+                 </div>  
+                 </div>
+        </div> </div>
+        </div>
+        <div id="main" class="fade-in">
   <div class="A">  
     <div class="title">  
  
@@ -54,7 +100,7 @@
 <!--マーク化テンプレート/Marks template-->
 <h2><small>バーコードを</small><span style="color: rgb(238, 141, 73);">作る!</span></h2>
 <!--div B Start-->
-<div id="mkqr">
+<div id="mkq">
 <input type="text" id="bmoji" placeholder="コードにするURL(文字)を入力">
 <button onclick="deletequery()">削除</button>
 </div>
@@ -101,7 +147,7 @@
     <div class="cnt"><p></p></div>
     <div class="Z">  
     <!-- ここに要素を挿入-->
-<p>二次元コード読み取り機能製作:html5-qrcode</p>
+<p>二次元コード読み取り:html5-qrcode</p>
 <h3>オープンソースライセンス表示</h3>
 <p>Html5-qrcode</p>
 <a href="https://github.com/mebjas/html5-qrcode?tab=readme-ov-file">https://github.com/mebjas/html5-qrcode?tab=readme-ov-file</a>
@@ -319,11 +365,14 @@
 <script>
     document.getElementById("bk2main").addEventListener("click",()=>{window.location.href="https://caffeineapps.pages.dev";});
 </script>
+<p>©2025 Y.Yokoha</p>
       <p><small>このページでは<a href="https://github.com/yokonoha/Caffeine_CSS" id="interchangeablecssprofiles">CaffeineCSS</a>を使用しています。</small></p>  
     </footer>
-
+</div>
 </body>
 <script src="./wdvs.js"></script>
+<script src="./spmgr.js"></script>
+<script src="./themeac.js"></script>
 <script>
     function goq() 
         {

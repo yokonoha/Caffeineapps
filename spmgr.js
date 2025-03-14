@@ -72,16 +72,30 @@
 //機能 3秒でsplash画面を自動で隠し、メインコンテンツを表示します。(全てのメインコンテンツはmainをIDとしたdiv内に格納されている必要があります。)
 
 console.log("[spmgr] Splash Controler Service Started.");
+if(localStorage.getItem("skpsplash")=="1")
+    {
+        document.getElementById("splash").style.display="none";
+        document.getElementById("main").style.display="flex";
+        document.getElementById("main").style.flexDirection="column";
+        document.getElementById("main").style.alignItems="center";  
+        console.log("[spmgr] Bypassed Splash Controler Service.");
+    }
+    else
+    {
+
+   
 window.addEventListener("load",()=>
 {
 setTimeout(()=>
 {
-document.getElementById("splash").style.display="none";
+
+      document.getElementById("splash").style.display="none";
 document.getElementById("main").style.display="flex";
 document.getElementById("main").style.flexDirection="column";
-document.getElementById("main").style.alignItems="center";
+document.getElementById("main").style.alignItems="center";  
 }
 ,3000);
 
 }
 );
+    }
