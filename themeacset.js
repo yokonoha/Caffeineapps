@@ -1,3 +1,8 @@
+////////////////////////////
+////テーマ選択補佐(通常版)////
+////////////////////////////
+
+
 document.addEventListener("DOMContentLoaded", () => {
     let forceo=localStorage.getItem("forcetheme");
 if (forceo=="1")
