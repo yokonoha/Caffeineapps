@@ -1,7 +1,7 @@
 {
-  "name": "Caffeine Movie",
-  "short_name": "CaffeineMovie",
-  "start_url": "/Caffeine_Movie",
+  "name": "CaffeineApps",
+  "short_name": "CaffeineApps",
+  "start_url": "/",
   "display": "fullscreen",
   "background_color": "#EFFFDF",
   "theme_color": "#EFFFDF",
