@@ -54,7 +54,7 @@
         <div class="G">
             <h3 id="002">CaffeineMemoへようこそ、<span id="username">ユーザー</span><span id="onlyJapanese">さん</span>!</h3>
             <p id="001">5つのスペースにメモを書き込むことができます(1スペース最大約2万文字)。<br>メモはこのブラウザー内に自動保存されるため、保存ボタンを押さなくても保存されます。</p>
-            <a href="https://caffeineapps.pages.dev/account/#details">ご利用前にここをクリックして注意事項を必ずお読み下さい。</a>
+            <a href="#details">ご利用前にここをクリックして注意事項を必ずお読み下さい。</a>
         </div>
         <div class="cnt"><p></p></div>
         <div class="cnt"><p></p></div>        <div class="G"  id="accountdetails">
@@ -185,7 +185,10 @@
                 <button onclick="reptxt4()">置き換えを実行する</button>
             </div>
         -->   </div>
-        <footer>
+        <footer id="details">
+    <p>このサイトではLocalStorageにデータを直接保存しています。この仕組みでは、製作者側がサーバー攻撃されたとしても情報は漏洩しません。しかし、あなたのブラウザーが直接攻撃を受けた場合は漏洩リスクが高まります。そのため、機密情報の書き込みはご遠慮下さい。これはCaffeineApps以外のどのwebサービスにおいても同様です。</p>
+    <p>ご利用の際にはセキュリティに注意し、CaffeineMemoのメモデータやユーザー画像データに機密データを含めないようにすることをお勧め致します。</p>
+    <p>記録された全てのデータに関して製作者は一切の責任を負いかねます。詳しくはCaffeineアカウント管理ページをご覧ください。</p>
             <div class="marks-container">
                 <div class="marks-r-y" id="bk2main"><p>メインページに戻る</p></div>
             </div>
