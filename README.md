@@ -1,3 +1,5 @@
 # Caffeineapps
-An Web Apps suite designed by Caffeine CSS! (Now preparing...)  
-CaffeineCSSを使用したWebアプリスイート!(現在準備中...)  
+An Web Apps suite designed by Caffeine CSS!   
+CaffeineCSSを使用したWebアプリスイート!  
+横茶横葉Bライセンス  
+Y.Yokoha B license  
