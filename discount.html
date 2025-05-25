@@ -1,0 +1,176 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <title>Caffeine Discount</title>
+  <link href="caffeine.css" rel="stylesheet" id="caffeinetheme"/>
+  <meta charset="UTF-8">
+</head>
+<style>
+.mkqr {
+ #qrmoji {
+  width: 200px;
+        }
+        }
+        input[type="text"] {
+            width: 300px;
+            padding: 10px;
+            margin: 10px 0;
+        }
+        button {
+            padding: 10px 20px;
+            background: #fff;
+            color: #111;
+            border: none;
+            cursor: pointer;
+            font-family: sans-serif ;
+            display: inline-block;
+         appearance: none;
+        }
+        #main
+{
+    display: none; 
+}
+#splash
+{
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 100vh;
+    background-color: #fff;
+    display: flex;
+    align-items: center;
+    justify-content:center;
+    z-index: 1000;
+    background-image: url('./art.png'); 
+            background-size: cover; 
+            background-position: center;
+            background-repeat: no-repeat;
+}
+.fade-in {
+            animation: fadeIn 1s ease-out;
+        }
+
+        @keyframes fadeIn {
+            from { opacity: 0; }
+            to { opacity: 1; }
+        }
+
+
+
+        #suji {
+            width: 90%;
+            padding: 10px;
+            margin: 10px 0;
+        }
+        button {
+            padding: 10px 20px;
+            background: #fff;
+            color: #111;
+            border: none;
+            cursor: pointer;
+            font-family: sans-serif ;
+            display: inline-block;
+         appearance: none;
+        }
+</style>
+<body>
+    <div id="splash" >
+        <div id="splashc"style="width: 80vw; display: flex;align-items: center;justify-content:center;">
+        <div class="C">
+            <div class="A">  
+                <div class="title">  
+                <img src="./music.png" width="15%" height="15%">  
+                <h1>Caffeine Discount</h1>   
+                 </div>  
+                 </div>  
+                 <div class="marks-container">
+                 <div class="marks-r-b2">
+                     <p>Rev.0.0(Preparation)-Caffeine_CSS Rev.4</p>  
+                 </div>  
+                 </div>
+        </div> </div>
+        </div>
+        <div id="main" class="fade-in">
+  <div class="A">  
+    <div class="title">  
+
+    <h3>Caffeine 割引販売価格速計算</h3>   
+     </div>  
+     </div>  
+     <div class="cnt"><p></p></div>
+     <div class="cnt"><p></p></div>
+     <noscript><h1 style="color: red;">JavaScriptが無効です。Coffeeブラウザーの場合は、Upline上の「快適読書モード」または「緊急データセーバー」をオフにしてください。JavaScriptが無効な状態では動作しません。</h1></noscript>
+
+     <div class="cnt"><p></p></div>
+     <div class="cnt"><p></p></div>
+     <div class="B"> 
+<h2>計算結果　動きません。</h2>
+<!--div B End-->
+<h3>税込価格:￥<span id="zeikomi">0</span></h3>
+<h3>税額:￥<span id="zeigaku">0</span></h3>
+    </div> 
+
+    <div class="cnt"><p></p></div>
+    <div class="cnt"><p></p></div>
+    <div class="cnt"><p></p></div>
+    <div class="cnt"><p></p></div>
+
+    <div class="C">  
+<!-- ここに要素を挿入-->
+<p>値を入力すると計算がスタートします。</p>
+<label>
+    <input type="radio" name="zeiritsu" value="1.08">
+    軽減税率(8%)として計算
+</label>
+<br>
+<label>
+    <input type="radio" name="zeiritsu" value="1.1" checked>
+    税率(10%)として計算
+</label>
+        <div style="display: flex;">
+            <h1>￥</h1>
+<input type="number" id="suji" style="font-size: xx-large;"> 
+</div>
+<button onclick="del()">リセット</button>
+    </div>  
+
+    <div class="cnt"><p></p></div>
+    <div class="cnt"><p></p></div>
+    <div class="cnt"><p></p></div>
+    <div class="cnt"><p></p></div>
+    <div class="G"  id="accountdetails">
+        <p onclick="closeaccountdiv()" id="asis1">閉じる</p>
+        <a href="https://caffeineapps.pages.dev/account" target="_blank"><img src="./ic.png" style="height: 50px; border-radius: 500px;" id="accountview"></a>
+        <div class="I" id="dropdownarea">
+        <p><span id="username" id="asis2">User</span></p>
+        <p><small id="asis3">Caffeineアカウント<br>(ローカル)</small></p>
+
+        </div>
+    </div>
+    <div class="cnt"><p></p></div>
+    <div class="cnt"><p></p></div>
+    <div class="cnt"><p></p></div>
+    <div class="cnt"><p></p></div>
+
+
+    <footer>
+<div class="marks-container">
+    <div class="marks-r-y" id="bk2main"><p>メインページに戻る</p></div>
+</div>
+<script>
+    document.getElementById("bk2main").addEventListener("click",()=>{window.location.href="https://caffeineapps.pages.dev";});
+</script>
+<p>©2025 Y.Yokoha All Rights Reserved.</p>
+      <p><small>このページでは<a href="https://github.com/yokonoha/Caffeine_CSS" id="interchangeablecssprofiles">CaffeineCSS</a>を使用しています。</small></p>  
+    </footer>
+</div>
+</body>
+<script src="./wdvs.js"></script>
+<script src="./spmgr.js"></script>
+<script src="./themeac.js"></script>
+ <script src="./asis.js"></script>
+ <script src="./das.js"></script>
+ <script src="./cjp.js"></script>
+</html>
