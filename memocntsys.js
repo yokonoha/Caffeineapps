@@ -51,6 +51,11 @@ textbox4.value=localStorage.getItem("tbox4");
 const recovery=document.getElementById("recovery");
 const timertexrea=document.getElementById("countdowntext");
 const recoverypause=document.getElementById("recoverypause");
+const exportbtn=document.getElementById("exportdata");
+const exportbtn2=document.getElementById("exportdata2");
+const exportbtn3=document.getElementById("exportdata3");
+const exportbtn4=document.getElementById("exportdata4");
+const exportallbtn=document.getElementById("exportall");
 //リカバリー:localstorageに保存されないtextarea。 スペース1~4のテキストを30秒間隔で日付と時間の見出しを付けて追記する。全スペース共通。
 let recoveryInterval=setInterval(() => {
     const now = new Date();
@@ -75,7 +80,7 @@ let cd=setInterval(() => {
     const seconds = Math.floor(countdown % 60);
     timertexrea.innerHTML = `あと${seconds}秒で復元用コピーが自動作成されます。`;
 }, 500);
-//いったんストップ
+
 recoverypause.addEventListener("click", () => {
     if (recoverypause.innerText === "履歴記録を一時停止") {
         recoverypause.innerText = "履歴記録を再開";
@@ -242,3 +247,56 @@ function reptxt4() {
     alert("置換が完了しました。");
     repdiv4.style.display="none";
 }
+
+//txtエクスポート
+exportbtn.addEventListener("click", () => {
+    const blob = new Blob([textbox1.value], { type: 'text/plain' });
+    const url = URL.createObjectURL(blob);
+    const a = document.createElement('a');
+    a.href = url;
+    a.download = 'memo1.txt';
+    document.body.appendChild(a);
+    a.click();
+    document.body.removeChild(a);
+});
+exportbtn2.addEventListener("click", () => {
+    const blob = new Blob([textbox2.value], { type: 'text/plain' });
+    const url = URL.createObjectURL(blob);
+    const a = document.createElement('a');
+    a.href = url;
+    a.download = 'memo2.txt';
+    document.body.appendChild(a);
+    a.click();
+    document.body.removeChild(a);
+});
+exportbtn3.addEventListener("click", () => {
+    const blob = new Blob([textbox3.value], { type: 'text/plain' });
+    const url = URL.createObjectURL(blob);
+    const a = document.createElement('a');
+    a.href = url;
+    a.download = 'memo3.txt';
+    document.body.appendChild(a);
+    a.click();
+    document.body.removeChild(a);
+});
+exportbtn4.addEventListener("click", () => {
+    const blob = new Blob([textbox4.value], { type: 'text/plain' });
+    const url = URL.createObjectURL(blob);
+    const a = document.createElement('a');
+    a.href = url;
+    a.download = 'memo4.txt';
+    document.body.appendChild(a);
+    a.click();
+    document.body.removeChild(a);
+});
+exportallbtn.addEventListener("click", () => {
+    const allText = `スペース1:\n${textbox1.value}\n\nスペース2:\n${textbox2.value}\n\nスペース3:\n${textbox3.value}\n\nスペース4:\n${textbox4.value}`;
+    const blob = new Blob([allText], { type: 'text/plain' });
+    const url = URL.createObjectURL(blob);
+    const a = document.createElement('a');
+    a.href = url;
+    a.download = 'all_memos.txt';
+    document.body.appendChild(a);
+    a.click();
+    document.body.removeChild(a);
+});

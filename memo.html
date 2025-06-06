@@ -41,7 +41,7 @@
                  </div>  
                  <div class="marks-container">
                  <div class="marks-r-o">
-                     <p>Rev.2.0(Release)-CaffeineCSS Rev.4</p>  
+                     <p>Rev.4.0(Release)-CaffeineCSS Rev.4</p>  
                  </div>  
                  </div>
         </div> </div>
@@ -54,7 +54,7 @@
         <div class="G">
             <h3 id="002">CaffeineMemoへようこそ、<span id="username">ユーザー</span><span id="onlyJapanese">さん</span>!</h3>
             <p id="001">5つのスペースにメモを書き込むことができます(1スペース最大約2万文字)。<br>メモはこのブラウザー内に自動保存されるため、保存ボタンを押さなくても保存されます。</p>
-            <p>Latest News:2025.06.06:入力支援機能,復元用履歴機能を実装しました。</p>
+            <p>Latest News:2025.06.07:エクスポート機能を実装しました。</p>
             <a href="#details">ご利用前にここをクリックして注意事項を必ずお読み下さい。</a>
         </div>
         <div class="cnt"><p></p></div>
@@ -199,6 +199,26 @@
             </div>
            </div>
            <div class="cnt"><p></p></div>
+        <div class="cnt"><p></p></div>
+        <div class="cnt"><p></p></div>
+        <div class="J">
+            <h3>データの書き出し</h3>
+            <p>このボタンを押すと、現在のメモの内容をテキストファイルとして書き出します。</p>
+            <button id="exportdata" style="width: 75vw; max-width: 100%; height: 40px; background-color: rgb(209, 245, 142); color: rgb(0, 0, 0); border-radius: 5px; border-style: none;">スペース1のメモデータ書き出し</button>
+            <br><br>
+            <button id="exportdata2" style="width: 75vw; max-width: 100%; height: 40px; background-color: rgb(142, 231, 245); color: rgb(0, 0, 0); border-radius: 5px; border-style: none;">スペース2のメモデータ書き出し</button>
+            <br><br>
+            <button id="exportdata3" style="width: 75vw; max-width: 100%; height: 40px; background-color: rgb(209, 245, 142); color: rgb(0, 0, 0); border-radius: 5px; border-style: none;">スペース3のメモデータ書き出し</button>
+            <br><br>
+            <button id="exportdata4" style="width: 75vw; max-width: 100%; height: 40px; background-color: rgb(142, 231, 245); color: rgb(0, 0, 0); border-radius: 5px; border-style: none;">スペース4のメモデータ書き出し</button>
+            <br><br>
+            <button id="exportall" style="width: 75vw; max-width: 100%; height: 40px; background-color: rgb(209, 245, 142); color: rgb(0, 0, 0); border-radius: 5px; border-style: none;">一括書き出し(単一ファイル)</button>
+            <p>書き出されたファイルは、メモの内容をテキスト形式で保存したものです。<br>このファイルは、メモの内容を他のアプリケーションで利用できます。</p>
+            <p>なお、メモ保存と同様にエクスポート処理はblob経由でプライベートに行われるため、サーバーにデータは送信されません。</p>
+
+        </div>
+        <div class="cnt"><p></p></div>
+        <div class="cnt"><p></p></div>
         <div class="cnt"><p></p></div>
         <div class="cnt"><p></p></div>
           <div class="P">
