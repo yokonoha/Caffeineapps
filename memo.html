@@ -2,7 +2,7 @@
 <html>
 <head>
   <meta name="viewport" content="width=device-width,initial-scale=1">
-  <meta name="twitter:title" content="Caffeine Movie by Y.Yokoha Studio Projects">
+  <meta name="twitter:title" content="Caffeine Memo by Y.Yokoha Studio Projects">
   <meta name="twitter:description" content="CaffeineCSSを活用したメモWebアプリ(ローカル保存)">
   <meta name="description" content="CaffeineCSSを活用したメモWebアプリ(ローカル保存)">
  
@@ -41,7 +41,7 @@
                  </div>  
                  <div class="marks-container">
                  <div class="marks-r-o">
-                     <p>Rev.1.0(Release)-CaffeineCSS Rev.4</p>  
+                     <p>Rev.2.0(Release)-CaffeineCSS Rev.4</p>  
                  </div>  
                  </div>
         </div> </div>
@@ -54,6 +54,7 @@
         <div class="G">
             <h3 id="002">CaffeineMemoへようこそ、<span id="username">ユーザー</span><span id="onlyJapanese">さん</span>!</h3>
             <p id="001">5つのスペースにメモを書き込むことができます(1スペース最大約2万文字)。<br>メモはこのブラウザー内に自動保存されるため、保存ボタンを押さなくても保存されます。</p>
+            <p>Latest News:2025.06.06:入力支援機能を実装しました。</p>
             <a href="#details">ご利用前にここをクリックして注意事項を必ずお読み下さい。</a>
         </div>
         <div class="cnt"><p></p></div>
@@ -73,7 +74,7 @@
             <textarea id="textbox1" type="text" maxlength="20000"  style=" width: 75vw; max-width: 100%; height: 40vh; border-color: rgb(209, 245, 142); border-style:dashed; background-color: rgb(248, 250, 235); border-radius: 5px; resize: vertical;"></textarea>
             <p><span id="t1mj">0/20000文字</span> <span id="t1remain">あと20000文字記録できます。</span></p>
             <br>
-    <!--       <p>入力支援機能</p>
+           <p>入力支援機能</p>
             <div class="marks-container">
                 
                 <div class="marks-r-y">
@@ -83,18 +84,21 @@
                     <p id="t02">貼り付け</p>
                 </div>
                 <div class="marks-r-b">
-                    <p id="t03">文字置き換え機能</p>
+                    <p id="t03">全て削除</p>
                 </div>
+                <div class="marks-r-g">
+                    <p id="t04">文字の置き換え</p>
+                    </div>
             </div>
             <div class="S" id="repdiv" style="display: none;">
-            <h3 id="t04">文字の置き換え</h3>
+            <h3 id="t04B">文字の置き換え</h3>
                 <p id="t05">上のテキストボックスに置き換える対象となる文字、下のテキストボックスに置き換え後の文字を入力して、実行ボタンを押して下さい。</p>
                 <input id="t06" type="text" style="width: 35%;" placeholder="置換前">
                 <br>
                 <input id="t07" type="text" style="width: 35%;" placeholder="置換後">
                 <button onclick="reptxt()">置き換えを実行する</button>
             </div>
-    -->     </div>
+         </div>
         <div class="cnt"><p></p></div>
         <div class="cnt"><p></p></div>
         <div class="cnt"><p></p></div>
@@ -103,7 +107,7 @@
             <textarea id="textbox2" type="text" maxlength="20000"  style=" width: 75vw; max-width: 100%; height: 40vh; border-color: rgb(209, 245, 142); border-style:dashed; background-color: rgb(248, 250, 235); border-radius: 5px; resize: vertical;"></textarea>
             <p><span id="t12mj">0/20000文字</span> <span id="t12remain">あと20000文字記録できます。</span></p>
             <br>
-        <!--    <p>入力支援機能</p>
+           <p>入力支援機能</p>
             <div class="marks-container">
                 
                 <div class="marks-r-y">
@@ -113,18 +117,21 @@
                     <p id="t202">貼り付け</p>
                 </div>
                 <div class="marks-r-b">
-                    <p id="t203">文字置き換え機能</p>
+                    <p id="t203">全て削除</p>
+                </div>
+                <div class="marks-r-g">
+                    <p id="t204">文字の置き換え</p>
                 </div>
             </div>
-            <div class="S" id="repdiv2" style="display: none;">
-            <h3 id="t204">文字の置き換え</h3>
+          <div class="S" id="repdiv2" style="display: none;">
+            <h3 id="t204B">文字の置き換え</h3>
                 <p id="t205">上のテキストボックスに置き換える対象となる文字、下のテキストボックスに置き換え後の文字を入力して、実行ボタンを押して下さい。</p>
                 <input id="t206" type="text" style="width: 35%;" placeholder="置換前">
                 <br>
                 <input id="t207" type="text" style="width: 35%;" placeholder="置換後">
                 <button onclick="reptxt2()">置き換えを実行する</button>
             </div>
-        -->  </div>
+         </div>
         <div class="cnt"><p></p></div>
         <div class="cnt"><p></p></div>
         <div class="cnt"><p></p></div>
@@ -133,7 +140,7 @@
             <textarea id="textbox3" type="text" maxlength="20000"  style="max-width: 100%; width: 75vw;  height: 40vh; border-color: rgb(209, 245, 142); border-style:dashed; background-color: rgb(248, 250, 235); border-radius: 5px; resize: vertical;"></textarea>
             <p><span id="t13mj">0/20000文字</span> <span id="t13remain">あと20000文字記録できます。</span></p>
             <br>
-       <!--     <p>入力支援機能</p>
+          <p>入力支援機能</p>
             <div class="marks-container">
                 
                 <div class="marks-r-y">
@@ -143,18 +150,21 @@
                     <p id="t302">貼り付け</p>
                 </div>
                 <div class="marks-r-b">
-                    <p id="t303">文字置き換え機能</p>
+                    <p id="t303">全て削除</p>
                 </div>
+                <div class="marks-r-g">
+                    <p id="t304">文字の置き換え</p>
+                    </div>
                </div>
-            <div class="S" id="repdiv3" style="display: none;">
-            <h3 id="t304">文字の置き換え</h3>
+           <div class="S" id="repdiv3" style="display: none;">
+            <h3 id="t304B">文字の置き換え</h3>
                 <p id="t305">上のテキストボックスに置き換える対象となる文字、下のテキストボックスに置き換え後の文字を入力して、実行ボタンを押して下さい。</p>
                 <input id="t306" type="text" style="width: 35%;" placeholder="置換前">
                 <br>
                 <input id="t307" type="text" style="width: 35%;" placeholder="置換後">
                 <button onclick="reptxt3()">置き換えを実行する</button>
             </div>
-    -->    </div>
+       </div>
         <div class="cnt"><p></p></div>
         <div class="cnt"><p></p></div>
         <div class="cnt"><p></p></div>
@@ -163,7 +173,7 @@
             <textarea id="textbox4" type="text" maxlength="20000"  style=" width: 75vw; max-width: 100%; height: 40vh; border-color: rgb(209, 245, 142); border-style:dashed; background-color: rgb(248, 250, 235); border-radius: 5px; resize: vertical;"></textarea>
             <p><span id="t14mj">0/20000文字</span> <span id="t14remain">あと20000文字記録できます。</span></p>
             <br>
-        <!--    <p>入力支援機能</p>
+           <p>入力支援機能</p>
             <div class="marks-container">
                
                 <div class="marks-r-y">
@@ -173,18 +183,31 @@
                     <p id="t402">貼り付け</p>
                 </div>
                 <div class="marks-r-b">
-                    <p id="t403">文字置き換え機能</p>
+                    <p id="t403">全て削除</p>
                 </div>
+                <div class="marks-r-g">
+                    <p id="t404">文字の置き換え</p>
+                    </div>
             </div>
-            <div class="S" id="repdiv4" style="display: none;">
-            <h3 id="t404">文字の置き換え</h3>
+           <div class="S" id="repdiv4" style="display: none;">
+            <h3 id="t404B">文字の置き換え</h3>
                 <p id="t405">上のテキストボックスに置き換える対象となる文字、下のテキストボックスに置き換え後の文字を入力して、実行ボタンを押して下さい。</p>
                 <input id="t406" type="text" style="width: 35%;" placeholder="置換前">
                 <br>
                 <input id="t407" type="text" style="width: 35%;" placeholder="置換後">
                 <button onclick="reptxt4()">置き換えを実行する</button>
             </div>
-        -->   </div>
+           </div>
+           <div class="cnt"><p></p></div>
+        <div class="cnt"><p></p></div>
+        <div class="cnt"><p></p></div>
+             <!--   <div class="P">
+            <h3>セッション履歴(復元ポイント)</h3>
+            <p>このセクションでは、メモのセッション履歴を表示します。<br>履歴はこのセッションが閉じられるとクリアされ、<br>復元できなくなりますのでご注意ください。</p>
+            <textarea id="recovery1" type="text"  style=" width: 75vw; max-width: 100%; height: 40vh; border-color: rgb(243, 130, 130); border-style:dashed; background-color: rgb(248, 202, 182); border-radius: 5px; resize: vertical;"></textarea>
+            <p>ここに記録されたものは保存されません。</p>
+            <br>
+</div>-->
         <footer id="details">
     <p>このサイトではLocalStorageにデータを直接保存しています。この仕組みでは、製作者側がサーバー攻撃されたとしても情報は漏洩しません。しかし、あなたのブラウザーが直接攻撃を受けた場合は漏洩リスクが高まります。そのため、機密情報の書き込みはご遠慮下さい。これはCaffeineApps以外のどのwebサービスにおいても同様です。</p>
     <p>ご利用の際にはセキュリティに注意し、CaffeineMemoのメモデータやユーザー画像データに機密データを含めないようにすることをお勧め致します。</p>
