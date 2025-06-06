@@ -48,10 +48,68 @@ textbox1.value=localStorage.getItem("tbox1");
 textbox2.value=localStorage.getItem("tbox2");
 textbox3.value=localStorage.getItem("tbox3");
 textbox4.value=localStorage.getItem("tbox4");
-//const recovery=document.getElementById("recovery");
-//リカバリー:localstorageに保存されないtextarea。 スペース1~4のテキストを一分間隔で日付と時間の見出しを付けてメモする。全スペース共通。
-
-
+const recovery=document.getElementById("recovery");
+const timertexrea=document.getElementById("countdowntext");
+const recoverypause=document.getElementById("recoverypause");
+//リカバリー:localstorageに保存されないtextarea。 スペース1~4のテキストを30秒間隔で日付と時間の見出しを付けて追記する。全スペース共通。
+let recoveryInterval=setInterval(() => {
+    const now = new Date();
+    const timestamp = now.toLocaleString();
+    const recoveryText = `\n\n---\n${timestamp} 復元用履歴\nスペース1:\n${textbox1.value}\nスペース2:\n${textbox2.value}\nスペース3:\n${textbox3.value}\nスペース4:\n${textbox4.value}`;
+    let currentRecovery = recovery.value;
+    // 既存のリカバリーテキストがある場合は改行してから追加
+    if (currentRecovery) {
+        recovery.value = recoveryText+currentRecovery;
+    } else {
+        recovery.value = recoveryText;
+    }
+}, 15000);
+//タイマー:リカバリーのテキストエリアの下に、リカバリーテキストが更新されるまでのタイマーを表示。0.5秒ごとに更新。
+let countdown = 15;
+let cd=setInterval(() => {
+    countdown -= 0.5;
+    if (countdown <= 0) {
+        countdown = 15; // リセット
+    }
+    
+    const seconds = Math.floor(countdown % 60);
+    timertexrea.innerHTML = `あと${seconds}秒で復元用コピーが自動作成されます。`;
+}, 500);
+//いったんストップ
+recoverypause.addEventListener("click", () => {
+    if (recoverypause.innerText === "履歴記録を一時停止") {
+        recoverypause.innerText = "履歴記録を再開";
+        clearInterval(recoveryInterval);
+clearInterval(cd);
+        recoveryInterval = null;
+        countdown = 15; // タイマーをリセット
+        
+        timertexrea.innerHTML = "履歴記録が一時停止中です。再開するにはボタンをクリックしてください。";
+    } else {
+        recoverypause.innerText = "履歴記録を一時停止";
+        recoveryInterval = setInterval(() => {
+            const now = new Date();
+            const timestamp = now.toLocaleString();
+            const recoveryText = `\n\n---\n${timestamp} 復元用履歴\nスペース1:\n${textbox1.value}\nスペース2:\n${textbox2.value}\nスペース3:\n${textbox3.value}\nスペース4:\n${textbox4.value}`;
+            let currentRecovery = recovery.value;
+            // 既存のリカバリーテキストがある場合は改行してから追加
+            if (currentRecovery) {
+                recovery.value = recoveryText+currentRecovery;
+            } else {
+                recovery.value = recoveryText;
+            }
+        }, 15000);
+        cd=setInterval(() => {
+            countdown -= 0.5;
+            if (countdown <= 0) {
+                countdown = 15; // リセット
+            }
+            
+            const seconds = Math.floor(countdown % 60);
+            timertexrea.innerHTML = `あと${seconds}秒で復元用コピーが自動作成されます。`;
+        }, 500);
+    }
+});
 
 setInterval(() => {
     localStorage.setItem("tbox1",textbox1.value);

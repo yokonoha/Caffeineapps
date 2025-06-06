@@ -54,7 +54,7 @@
         <div class="G">
             <h3 id="002">CaffeineMemoへようこそ、<span id="username">ユーザー</span><span id="onlyJapanese">さん</span>!</h3>
             <p id="001">5つのスペースにメモを書き込むことができます(1スペース最大約2万文字)。<br>メモはこのブラウザー内に自動保存されるため、保存ボタンを押さなくても保存されます。</p>
-            <p>Latest News:2025.06.06:入力支援機能を実装しました。</p>
+            <p>Latest News:2025.06.06:入力支援機能,復元用履歴機能を実装しました。</p>
             <a href="#details">ご利用前にここをクリックして注意事項を必ずお読み下さい。</a>
         </div>
         <div class="cnt"><p></p></div>
@@ -201,13 +201,17 @@
            <div class="cnt"><p></p></div>
         <div class="cnt"><p></p></div>
         <div class="cnt"><p></p></div>
-             <!--   <div class="P">
-            <h3>セッション履歴(復元ポイント)</h3>
-            <p>このセクションでは、メモのセッション履歴を表示します。<br>履歴はこのセッションが閉じられるとクリアされ、<br>復元できなくなりますのでご注意ください。</p>
-            <textarea id="recovery1" type="text"  style=" width: 75vw; max-width: 100%; height: 40vh; border-color: rgb(243, 130, 130); border-style:dashed; background-color: rgb(248, 202, 182); border-radius: 5px; resize: vertical;"></textarea>
+          <div class="P">
+            <h3>セッション履歴(復元用履歴)</h3>
+            <p>15秒間隔で入力内容をキャッシュします。<br>間違えて消してしまった文章を選んでコピーすることで再利用が可能です。<br>PCでのコピー: 文章を選んでからControl+Cキー</p>
+            <p>このセクションでは、メモのセッション履歴を表示します。<br>履歴はこのセッションが閉じられると消去され、<br>表示できなくなりますのでご注意ください。</p>
+            <p>テキスト選択が出来ない場合は下のボタンを押すと選択しやすくなります。</p>
+            <button id="recoverypause" style="width: 75vw; max-width: 100%; height: 40px; background-color: rgb(243, 130, 130); color: white; border-radius: 5px; border-style: none;">履歴記録を一時停止</button>
+            <textarea id="recovery" type="text" readonly style=" width: 75vw; max-width: 100%; height: 40vh; border-color: rgb(243, 130, 130); border-style:dashed; background-color: rgb(248, 202, 182); border-radius: 5px; resize: vertical;"></textarea>
             <p>ここに記録されたものは保存されません。</p>
+            <p id="countdowntext"></p>
             <br>
-</div>-->
+</div>
         <footer id="details">
     <p>このサイトではLocalStorageにデータを直接保存しています。この仕組みでは、製作者側がサーバー攻撃されたとしても情報は漏洩しません。しかし、あなたのブラウザーが直接攻撃を受けた場合は漏洩リスクが高まります。そのため、機密情報の書き込みはご遠慮下さい。これはCaffeineApps以外のどのwebサービスにおいても同様です。</p>
     <p>ご利用の際にはセキュリティに注意し、CaffeineMemoのメモデータやユーザー画像データに機密データを含めないようにすることをお勧め致します。</p>
