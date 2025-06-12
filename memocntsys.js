@@ -80,7 +80,13 @@ let cd=setInterval(() => {
     const seconds = Math.floor(countdown % 60);
     timertexrea.innerHTML = `あと${seconds}秒で復元用コピーが自動作成されます。`;
 }, 500);
-
+//複数タブで表示した場合の競合防止策
+window.addEventListener('storage', function(e) {
+    if (e.key === "tbox1") textbox1.value = localStorage.getItem("tbox1");
+    if (e.key === "tbox2") textbox2.value = localStorage.getItem("tbox2");
+    if (e.key === "tbox3") textbox3.value = localStorage.getItem("tbox3");
+    if (e.key === "tbox4") textbox4.value = localStorage.getItem("tbox4");
+});
 recoverypause.addEventListener("click", () => {
     if (recoverypause.innerText === "履歴記録を一時停止") {
         recoverypause.innerText = "履歴記録を再開";
