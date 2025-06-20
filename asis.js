@@ -1,52 +1,36 @@
-////////////////////////////////////////
-/// Account System Integration Script //
-///         by Y.Yokoha               //
-//       Display User images          //
-////////////////////////////////////////
+//Replaced
 
-//HTML Implementation Example:
-/*   <div class="G" style="position: absolute; top: 15vh; right: 5px;" id="accountdetails">
-        <p id="closeaccount">close</p>
-        <a href="#accountsettingsPageURL"><img src="./ic.png" style="height: 50px; border-radius: 500px;" id="accountview"></a>
-        <div class="I" id="dropdownarea">
-        <p><span id="username">User</span></p>
-        <p><small>Account<br>(local)</small></p>
-        
-        </div>
-    </div> */
-
-//JP
-/*    <div class="G" style="position: absolute; top: 15vh; right: 5px;" id="accountdetails">
-        <p onclick="closeaccountdiv()" id="asis1">閉じる</p>
-        <a href="https://caffeineapps.pages.dev/account" target="_blank"><img src="./ic.png" style="height: 50px; border-radius: 500px;" id="accountview"></a>
-        <div class="I" id="dropdownarea">
-        <p><span id="username" id="asis2">User</span></p>
-        <p><small id="asis3">Caffeineアカウント<br>(ローカル)</small></p>
-        
-        </div>
-    </div> */
-
-const imgholder=document.getElementById("accountview");
-const username=document.getElementById("username");
-const dda=document.getElementById("dropdownarea");
-const accountdiv=document.getElementById("accountdetails");
-const closebtn=document.getElementById("asis1");
-
-let usrname=localStorage.getItem("username");
-let usrimg=localStorage.getItem("userimage");
-//Show user name
-if (usrname=="")
-{
-    username.innerText="User"; 
+//一度だけlocalstorageの中身全てのkey,valueをテキストファイルにして自動ダウンロード
+function downloadLocalStorage() {
+    let text = '';
+    for (let i = 0; i < localStorage.length; i++) {
+        const key = localStorage.key(i);
+        const value = localStorage.getItem(key);
+        text += `${key}: ${value}\n`;
+    }
+    const blob = new Blob([text], { type: 'text/plain' });
+    const url = URL.createObjectURL(blob);
+    const a = document.createElement('a');
+    a.href = url;
+    a.download = '[Important]CaffeineLSBackup.txt';
+    document.body.appendChild(a);
+    a.click();
+    document.body.removeChild(a);
+    URL.revokeObjectURL(url);
+    //ローカルストレージを全削除
+    localStorage.clear();
+    console.log('[セキュリティ] ローカルストレージのバックアップと削除が完了しました。');
+    alert('アカウントシステムとCaffeineMemo廃止に伴いローカルストレージのバックアップファイルをエクスポートしました。このファイルは再発行できませんので大切に保管して下さい。');
 }
-else
-{
- username.innerText=usrname;   
-}
-closebtn.addEventListener("click",()=>{accountdiv.style.display="none";});
-if(usrimg)
-{
-    imgholder.src=usrimg;
+// 一度だけlocalstorageの中身全てのkey,valueをテキストファイルにして自動ダウンロード
+function downloadLocalStorageOnce() {
+    if (!localStorage.getItem('downloaded')) {
+        downloadLocalStorage();
+        localStorage.setItem('downloaded', 'true');
+    }
 }
 
-
+// ページが読み込まれたときに実行
+window.addEventListener('load', () => {
+    downloadLocalStorageOnce();
+});
