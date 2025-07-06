@@ -134,7 +134,6 @@ async function storekashi(file)
     lrcmap.set(kyokumei,parser(nakami))
 }
 
-//この先Rawcode 要注意安全。
 
 function parser(text) {
     const lines = text.split("\n");
@@ -153,7 +152,7 @@ function parser(text) {
     return lyrics;
 }
 function displayLyrics(lyrics) {
-    lyricsDiv.innerHTML = ""; // 一度クリア
+    lyricsDiv.innerHTML = "";
     lyrics.forEach(({ time, text }) => {
         const p = document.createElement("p");
         p.textContent = text;
@@ -162,7 +161,6 @@ function displayLyrics(lyrics) {
     });
 }
 
-// 曲の進行に合わせて歌詞をハイライト
 audioPlayer.addEventListener("timeupdate", () => {
     const currentTime = audioPlayer.currentTime;
     const lyrics = Array.from(lyricsDiv.children);
@@ -177,8 +175,6 @@ audioPlayer.addEventListener("timeupdate", () => {
 });
 
 
-//おわり
-////////////////////////////////////////////////////////////////////////////////////////////////////
 function mstore(files)
 {
     playlist = Array.from(files).filter(file => file.type.startsWith('audio/'));
@@ -201,15 +197,13 @@ function loadAudio(file)
     isPlaying=true;
     playPauseButton.src="pause.png";
 
-    ///////////RAW 
-    const songName = file.name.replace(/\..+$/, ""); // 拡張子を除いた曲名
+    const songName = file.name.replace(/\..+$/, "");
     if (lrcmap.has(songName)) {
         displayLyrics(lrcmap.get(songName));
     } else {
         lyricsDiv.innerHTML = "<p>歌詞なし</p>";
     }
 
-    ////////////////////////////////////////////////////////////////////////////////////////////
 }
 
 function DSPmetadata(file)
