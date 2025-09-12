@@ -1,5 +1,5 @@
 //Replaced
-
+/*
 //一度だけlocalstorageの中身全てのkey,valueをテキストファイルにして自動ダウンロード
 function downloadLocalStorage() {
     let text = '';
@@ -33,4 +33,7 @@ function downloadLocalStorageOnce() {
 // ページが読み込まれたときに実行
 window.addEventListener('load', () => {
     downloadLocalStorageOnce();
+
 });
+*/
+console.log("実行中");
