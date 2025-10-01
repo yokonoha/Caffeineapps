@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <title>[頑張れ受験生!] 2026共通テストまで一体何日!!? - とびっきり最大限の焦燥感をあなたに...</title>
+  <meta charset="UTF-8">
+</head>
+<!--このページではFSLinearのスタイルを一部使用しています。-->
+<!--このページではaclsys,timesysreを使用しています。-->
+<style>
+    body 
+{
+    font-family: Arial, sans-serif ;
+    margin: 0;
+    padding: 0;
+    background-color: #020202;
+    color: #dff8ea;
+display: flex;
+flex-direction: column;
+align-items: center;
+overflow-x: hidden;
+justify-content: center;
+}
+.A
+{
+padding: 20px;
+background-color: #121f27;
+border-style: solid;
+border-width: 1px;
+border-color: #fcfcfc;
+border-left: 15px solid #9fdb77;
+box-shadow: 0px 4px 6px rgba(0,0,0,0.1);
+max-width: 900px;
+margin: 0;
+  box-shadow: 0 0 20px hsl(0, 100%, 75%);
+  animation: hueRotate 3s linear infinite;
+}
+
+@keyframes hueRotate {
+  0%   { filter: hue-rotate(0deg); }
+  100% { filter: hue-rotate(360deg); }
+}
+
+</style>
+<body>
+    <div style="justify-content: center; align-items: center;">
+        <div class="mojiban" style="display: flex; justify-content: center; align-items: center; width: min(60vw, 400px); height: min(60vw, 400px); max-width: 900px; border-radius: 50%; border-style: solid; border-width: 5px; background-color: #111; border-color: #fff;">
+        <div class="hosei" style="width: 100%; height: 100%; position: relative;">
+            <div class="mijikaihari" style="position: absolute; left: 50%; bottom: 50%; transform-origin: bottom; transform: translateX(-50%); transition-timing-function: steps(1); width: 3%; height: 25%; background-color: #12f32a; border-radius: 8vw;"></div>
+            <div class="nagaihari" style="position: absolute; left: 50%; bottom: 50%; transform-origin: bottom; transform: translateX(-50%); transition-timing-function: steps(1); width: 4%; height: 45%; background-color: aquamarine; border-radius: 6vw;"></div>
+            <div class="byoushin" style="position: absolute; left: 50%; bottom: 50%; transform-origin: bottom; transform: translateX(-50%); transition-timing-function: steps(1); width: 1%; height: 50%; background-color: coral; border-radius: 3vw;"></div>
+        </div>
+</div>
+<script src="./aclsys.js"></script>
+  <div id="cddisp" class="A">
+    <h1 id="koko"></h1>
+    <h3>今日は
+   <small> <span id="year"></span>/<span id="month"></span>/<span id="date"></span>
+<span id="youbi"></span></h3><h2><span id="hour"></span>:<span id="min"></span> <small><span id="sec"></span></h2>
+  </div>
+<a href="https://x.com/yokocha_yokoha">Y.Yokoha</a>
+</body>
+<script src="./timesysre.js"></script>
+<script>
+    //受験生焦燥感Generator
+    //このスクリプトはaclsis(Licensed under Y.Yokoha B license)を一部使用しています。
+    const THE_DAY=new Date("2026-01-17T00:00:00");
+    let cddisp=document.getElementById("koko");
+
+    function zerofiller(kazu,length){
+            return kazu.toString().padStart(length,"0");
+    }
+    
+    function koushin(){
+        const timenowis=new Date();
+        let diff_cha=THE_DAY-timenowis;
+        if(diff_cha<=0)
+    {
+        cddisp.textContent="今日は試験当日!!がんばれ受験生!!!!!!!!!!!!!!!!!!!!!!!!!!!!!";
+        clearInterval(workertimer);
+        return;
+    }
+    let diffday=Math.floor(diff_cha/(86400000));//86400000は24h
+    let diff_ji=Math.floor((diff_cha/3600000%24));//1hour(3600000)なのでそれを24で割った余りは時間
+    let diff_min=Math.floor((diff_cha/60000%60));//1min=60000ms!
+    let diff_sec=Math.floor(diff_cha/1000%60);//1s=1000ms
+    let diff_ms=diff_cha%1000;
+
+    let mergeall="<small>共通テストの日まであと...</small><br><b>"+zerofiller(diffday,3)+"日"+zerofiller(diff_ji,2)+"時間"+zerofiller(diff_min,2)+"分"+zerofiller(diff_sec,2)+"秒"+zerofiller(diff_ms,3)+"<b>";
+    cddisp.innerHTML=mergeall;
+    }
+    koushin();
+    const workertimer=setInterval(koushin,16); //60fps!!!!
+</script>
+
+</html>
